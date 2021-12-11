@@ -1,0 +1,101 @@
+{
+    "footerPages": [{
+            "id": "fp-1",
+            "label": "Home",
+            "link": "/",
+            "isExternalLink": false
+        },
+        {
+            "id": "fp-2",
+            "label": "Sensei Temple",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fp-3",
+            "label": "$SENSEI",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fp-4",
+            "label": "Team",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fp-5",
+            "label": "Contact",
+            "link": "/",
+            "isExternalLink": true
+        }
+    ],
+    "footerCommunity": [{
+            "id": "fc-1",
+            "label": "Telegram FR",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fc-2",
+            "label": "Telegram EN",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fc-3",
+            "label": "Twitter",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fc-4",
+            "label": "Reddit",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fc-5",
+            "label": "Discord",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fc-6",
+            "label": "Instagram",
+            "link": "/",
+            "isExternalLink": true
+        }
+    ],
+    "footerResource": [{
+            "id": "fr-1",
+            "label": "BlackPaper",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fr-2",
+            "label": "Contract Github",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fr-3",
+            "label": "BscScan",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fp-4",
+            "label": "Burn",
+            "link": "/",
+            "isExternalLink": true
+        },
+        {
+            "id": "fp-5",
+            "label": "Wallet Transparency",
+            "link": "/",
+            "isExternalLink": true
+        }
+    ]
+}

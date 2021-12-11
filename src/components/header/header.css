@@ -1,0 +1,69 @@
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 50px 0;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+.header-scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+}
+
+.header-group {
+    max-width: 80vw;
+    margin: 0 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.header-group span {}
+
+.header-group a {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    justify-self: start;
+    font-family: "AirbnbCerealBlack";
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    justify-self: end;
+}
+
+.nav-group button {
+    cursor: pointer;
+}
+
+a.header-button button {
+    outline: none;
+    border: none;
+    background: none;
+    font-family: "AirbnbCerealBlack";
+    color: white;
+    text-transform: uppercase;
+    width: 120px;
+}
+
+.btn-lang {
+    outline: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    background: white;
+    font-family: "AirbnbCerealBlack";
+    color: black;
+    border-radius: 100%;
+}
