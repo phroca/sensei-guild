@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import HeroProfil from "../hero-profil/hero-profil"
+import ProfilLinks from "../profil-links/profil-links"
 
 
 const SectionContainer = styled.div`
@@ -13,6 +14,7 @@ const HeroProfilSection = () => {
     return(
         <SectionContainer>
             <HeroProfil />
+            <ProfilLinks />
         </SectionContainer>
     )
 }
