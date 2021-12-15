@@ -25,7 +25,7 @@ const CashPrize = () => {
             <CashPrizeNumber>
                 295 251 463 $SENSEI        
             </CashPrizeNumber>
-            <Link to="/"><button className="sensei-btn big-btn">Cashprize</button></Link>
+            <Link to="/cashprize"><button className="sensei-btn big-btn">Cashprize</button></Link>
         </CashPrizeContainer>
     ) 
 
