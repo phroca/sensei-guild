@@ -1,0 +1,65 @@
+@keyframes animateGaia {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+    33% {
+        transform: translateY(260px) translateX(260px);
+    }
+    67% {
+        transform: translateY(260px) translateX(-260px);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+@keyframes animateOrion {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+    33% {
+        transform: translateY(-260px) translateX(260px);
+    }
+    67% {
+        transform: translateX(525px);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+@keyframes animatePegasus {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+    33% {
+        transform: translateX(-525px);
+    }
+    67% {
+        transform: translateY(-260px) translateX(-260px);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+.hero--img-gaia {
+    animation: animateGaia;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.hero--img-orion {
+    animation: animateOrion;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.hero--img-pegasus {
+    animation: animatePegasus;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}

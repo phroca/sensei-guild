@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import imgGaia from "../../../images/img-gaia.svg"
 import imgOrion from "../../../images/img-orion.svg"
 import imgPegasus from "../../../images/img-pegasus.svg"
+import "./hero-guilde.css"
 
 const HeroGuildeContainer = styled.div`
         background: black;
@@ -35,15 +36,15 @@ const HeroGuildePartRight = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    .img-gaia{
+    .hero--img-gaia{
         grid-column-start: 2;
         grid-row-start: 1;
     }
-    .img-orion{
+    .hero--img-orion{
         grid-column-start: 1;
         grid-row-start: 2;
     }
-    .img-pegasus{
+    .hero--img-pegasus{
         grid-column-start: 3;
         grid-row-start: 2;
     }
@@ -68,9 +69,9 @@ const HeroGuilde = () => {
                 <Link to="/"><button className="sensei-btn">Cashprize</button></Link>
             </HeroGuildePartLeft>
             <HeroGuildePartRight>
-                <img className="img-gaia" src={imgGaia} alt="gaia" />
-                <img className="img-orion" src={imgOrion} alt="orion" />
-                <img className="img-pegasus" src={imgPegasus} alt="pegasus" />
+                <img className="hero--img-gaia" src={imgGaia} alt="gaia" />
+                <img className="hero--img-orion" src={imgOrion} alt="orion" />
+                <img className="hero--img-pegasus" src={imgPegasus} alt="pegasus" />
             </HeroGuildePartRight>
         </HeroGuildeContainer>
     ) 
