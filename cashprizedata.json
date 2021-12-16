@@ -1,0 +1,93 @@
+{
+    "cashprize": {
+        "addressCashPrizeInSensei": "0x....",
+        "addressCashPrizeInBNB": "0x....",
+        "status": "progress",
+        "objectif": 4000000,
+        "totalRewardsInSensei": 1230000000,
+        "totalRewardsInBNB": 32000,
+        "victories": [{
+                "guild": "PEGASUS",
+                "RewardsinBNB": 100,
+                "rewardsInSensei": 150000000,
+                "rewardsPercent": 50,
+                "rewardDate": "14/11/2021"
+            },
+            {
+                "guild": "ORION",
+                "RewardsinBNB": 50,
+                "rewardsInSensei": 50000000,
+                "rewardsPercent": 25,
+                "rewardDate": "14/11/2021"
+            },
+            {
+                "guild": "GAIA",
+                "RewardsinBNB": 50,
+                "rewardsInSensei": 50000000,
+                "rewardsPercent": 25,
+                "rewardDate": "14/11/2021"
+            },
+            {
+                "guild": "PEGASUS",
+                "RewardsinBNB": 70,
+                "rewardsInSensei": 70000000,
+                "rewardsPercent": 33,
+                "rewardDate": "28/07/2021"
+            },
+            {
+                "guild": "ORION",
+                "RewardsinBNB": 50,
+                "rewardsInSensei": 70000000,
+                "rewardsPercent": 33,
+                "rewardDate": "28/07/2021"
+            },
+            {
+                "guild": "GAIA",
+                "RewardsinBNB": 50,
+                "rewardsInSensei": 70000000,
+                "rewardsPercent": 33,
+                "rewardDate": "28/07/2021"
+            },
+            {
+                "guild": "PEGASUS",
+                "RewardsinBNB": 100,
+                "rewardsInSensei": 100000000,
+                "rewardsPercent": 25,
+                "rewardDate": "05/06/2021"
+            },
+            {
+                "guild": "ORION",
+                "RewardsinBNB": 100,
+                "rewardsInSensei": 100000000,
+                "rewardsPercent": 25,
+                "rewardDate": "05/06/2021"
+            },
+            {
+                "guild": "GAIA",
+                "RewardsinBNB": 200,
+                "rewardsInSensei": 200000000,
+                "rewardsPercent": 50,
+                "rewardDate": "05/06/2021"
+            }
+        ],
+        "scoresByGuild": [{
+                "guild": "PEGASUS",
+                "rewardTotalinSensei": 220000000,
+                "rewardTotalinBNB": 6000
+            },
+            {
+                "guild": "ORION",
+                "rewardTotalinSensei": 570000000,
+                "rewardTotalinBNB": 14000
+            },
+            {
+                "guild": "GAIA",
+                "rewardTotalinSensei": 440000000,
+                "rewardTotalinBNB": 12000
+            }
+        ]
+
+
+
+    }
+}

@@ -1,0 +1,226 @@
+{
+    "users": [{
+            "id": "usr-1",
+            "address": "0x.....",
+            "email": "troeer@gmail.com",
+            "guild": "GAIA",
+            "socialLinks": [{
+                    "label": "Twitter",
+                    "username": "@troeer"
+                },
+                {
+                    "label": "telegram",
+                    "username": "@troeer"
+                },
+                {
+                    "label": "Discord",
+                    "username": "@troeer"
+                }
+            ],
+            "rewardsInSensei": 150000000,
+            "rewardsInBNB": 5,
+            "participationProofs": {
+                "twitterProofs": [{
+                        "raidDate": "19/12",
+                        "statusProof": "success",
+                        "linkfilesProof": [{
+                                "id": "twtlfp-19122021-1",
+                                "name": "proof-1.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-19122021-1/proof-1.png"
+                            },
+                            {
+                                "id": "twtlfp-19122021-2",
+                                "name": "proof-2.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-19122021-2/proof-2.png"
+                            }
+
+                        ]
+                    },
+                    {
+                        "raidDate": "21/12",
+                        "statusProof": "pending",
+                        "linkfilesProof": [{
+                                "id": "twtlfp-21122021-1",
+                                "name": "proof-1.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-21122021-1/proof-1.png"
+                            },
+                            {
+                                "id": "twtlfp-21122021-2",
+                                "name": "proof-2.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-21122021-2/proof-2.png"
+                            }
+
+                        ]
+                    }
+                ],
+                "telegramProofs": [{
+                        "raidDate": "19/12",
+                        "statusProof": "pending",
+                        "linkfilesProof": [{
+                                "id": "tlglfp-19122021-1",
+                                "name": "proof-1.png",
+                                "link": "https://80.945.126.12/usr-1/tlglfp-19122021-1/proof-1.png"
+                            },
+                            {
+                                "id": "tlglfp-19122021-2",
+                                "name": "proof-2.png",
+                                "link": "https://80.945.126.12/usr-1/tlglfp-19122021-2/proof-2.png"
+                            }
+
+                        ]
+                    },
+                    {
+                        "raidDate": "21/12",
+                        "statusProof": "pending",
+                        "linkfilesProof": [{
+                                "id": "tlglfp-21122021-1",
+                                "name": "proof-1.png",
+                                "link": "https://80.945.126.12/usr-1/tlglfp-21122021-1/proof-1.png"
+                            },
+                            {
+                                "id": "tlglfp-21122021-2",
+                                "name": "proof-2.png",
+                                "link": "https://80.945.126.12/usr-1/tlglfp-21122021-2/proof-2.png"
+                            }
+
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "usr-2",
+            "address": "0x.....",
+            "email": "xdgfb@gmail.com",
+            "guild": "ORION",
+            "socialLinks": [{
+                    "label": "Twitter",
+                    "username": "@xdgfb"
+                },
+                {
+                    "label": "telegram",
+                    "username": "@xdgfb"
+                },
+                {
+                    "label": "Discord",
+                    "username": "@xdgfb"
+                }
+            ],
+            "rewardsInSensei": 2500000,
+            "rewardsInBNB": 12,
+            "participationProofs": {
+                "twitterProofs": [{
+                        "raidDate": "19/12",
+                        "statusProof": "pending",
+                        "linkfilesProof": [{
+                                "id": "twtlfp-19122021-1",
+                                "name": "proof-1.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-19122021-1/proof-1.png"
+                            },
+                            {
+                                "id": "twtlfp-19122021-2",
+                                "name": "proof-2.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-19122021-2/proof-2.png"
+                            }
+
+                        ]
+                    },
+                    {
+                        "raidDate": "21/12",
+                        "statusProof": "empty",
+                        "linkfilesProof": []
+                    }
+                ],
+                "telegramProofs": [{
+                        "raidDate": "19/12",
+                        "statusProof": "empty",
+                        "linkfilesProof": []
+                    },
+                    {
+                        "raidDate": "21/12",
+                        "statusProof": "empty",
+                        "linkfilesProof": []
+                    }
+                ]
+            }
+        },
+        {
+            "id": "usr-3",
+            "address": "0x.....",
+            "email": "ergvin@gmail.com",
+            "guild": "PEGASUS",
+            "socialLinks": [{
+                    "label": "Twitter",
+                    "username": "@ergvin"
+                },
+                {
+                    "label": "telegram",
+                    "username": "@ergvin"
+                },
+                {
+                    "label": "Discord",
+                    "username": "@ergvin"
+                }
+            ],
+            "rewardsInSensei": 43008900,
+            "rewardsInBNB": 2,
+            "participationProofs": {
+                "twitterProofs": [{
+                        "raidDate": "19/12",
+                        "statusProof": "refused",
+                        "linkfilesProof": [{
+                                "id": "twtlfp-19122021-1",
+                                "name": "proof-1.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-19122021-1/proof-1.png"
+                            },
+                            {
+                                "id": "twtlfp-19122021-2",
+                                "name": "proof-2.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-19122021-2/proof-2.png"
+                            }
+
+                        ]
+                    },
+                    {
+                        "raidDate": "21/12",
+                        "statusProof": "pending",
+                        "linkfilesProof": [{
+                                "id": "twtlfp-21122021-1",
+                                "name": "proof-1.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-21122021-1/proof-1.png"
+                            },
+                            {
+                                "id": "twtlfp-21122021-2",
+                                "name": "proof-2.png",
+                                "link": "https://80.945.126.12/usr-1/twtlfp-21122021-2/proof-2.png"
+                            }
+
+                        ]
+                    }
+                ],
+                "telegramProofs": [{
+                        "raidDate": "19/12",
+                        "statusProof": "pending",
+                        "linkfilesProof": [{
+                                "id": "tlglfp-19122021-1",
+                                "name": "proof-1.png",
+                                "link": "https://80.945.126.12/usr-1/tlglfp-19122021-1/proof-1.png"
+                            },
+                            {
+                                "id": "tlglfp-19122021-2",
+                                "name": "proof-2.png",
+                                "link": "https://80.945.126.12/usr-1/tlglfp-19122021-2/proof-2.png"
+                            }
+
+                        ]
+                    },
+                    {
+                        "raidDate": "21/12",
+                        "statusProof": "empty",
+                        "linkfilesProof": []
+                    }
+                ]
+            }
+        }
+    ]
+}
