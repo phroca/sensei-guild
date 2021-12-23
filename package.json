@@ -1,10 +1,11 @@
 {
-    "name": "gatsby-starter-default",
+    "name": "sensei-guild",
     "private": true,
-    "description": "A simple starter to get up and developing quickly with Gatsby",
+    "description": "Découvrez la guilde qu'il vous faut ! Jouez gratuitement, dès maintenant !",
     "version": "0.1.0",
-    "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+    "author": "ROCA IT <roca.philippe63@gmail.com>",
     "dependencies": {
+        "@walletconnect/web3-provider": "^1.7.0",
         "gatsby": "^4.2.0",
         "gatsby-plugin-gatsby-cloud": "^4.2.0",
         "gatsby-plugin-image": "^2.2.0",
@@ -17,11 +18,14 @@
         "gatsby-source-filesystem": "^4.2.0",
         "gatsby-transformer-sharp": "^4.2.0",
         "gsap": "^3.8.0",
+        "moralis": "0.0.176",
+        "node-polyfill-webpack-plugin": "^1.1.4",
         "prop-types": "^15.7.2",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-helmet": "^6.1.0",
         "react-id-swiper": "^4.0.0",
+        "react-moralis": "^0.3.11",
         "styled-components": "^5.3.3"
     },
     "devDependencies": {

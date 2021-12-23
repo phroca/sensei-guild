@@ -2,9 +2,9 @@ import * as React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import imgGaia from "../../../images/img-gaia.svg"
-import imgOrion from "../../../images/img-orion.svg"
-import imgPegasus from "../../../images/img-pegasus.svg"
+import imgGaia from "../../../images/home-img/sections-img/GAIA.png"
+import imgOrion from "../../../images/home-img/sections-img/ORION.png"
+import imgPegasus from "../../../images/home-img/sections-img/PEGASUS.png"
 
 
 const SectionChoixGuilde = () => {
@@ -14,7 +14,6 @@ const SectionChoixGuilde = () => {
         display: grid;
         grid-template-rows: 275px auto;
         grid-gap: 50px;
-        align-items: center;
         justify-items: center;
         padding: 50px 150px;
     `
@@ -23,6 +22,8 @@ const SectionChoixGuilde = () => {
         color: white;
         font-size: 50px;
         text-align: center;
+        align-self: start;
+        margin: 0;
     `
     const ChoixGuildeListe = styled.div`
         display: grid;

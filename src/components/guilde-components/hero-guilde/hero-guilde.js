@@ -2,9 +2,9 @@ import * as React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import imgGaia from "../../../images/img-gaia.svg"
-import imgOrion from "../../../images/img-orion.svg"
-import imgPegasus from "../../../images/img-pegasus.svg"
+import imgGaia from "../../../images/home-img/hero-img/GAIA.png"
+import imgOrion from "../../../images/home-img/hero-img/ORION.png"
+import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
 import "./hero-guilde.css"
 
 const HeroGuildeContainer = styled.div`

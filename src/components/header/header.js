@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import "./header.css"
 
 import logoSensei from "../../images/logo-sensei.png"
+import Account from "../account-component/account"
 
 class Header extends React.Component{
   constructor(props){
@@ -46,6 +47,7 @@ class Header extends React.Component{
                 <a className="header-button" href="#"><button>sensei temple</button></a>
                 <a className="header-button" href="#"><button>sensei</button></a>
                 <Link to="/"><button className="sensei-btn">buy sensei</button></Link>
+                <Account />
                 <button className="btn-lang">EN</button>
               </div>
             </div>
