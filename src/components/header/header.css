@@ -20,8 +20,6 @@
     justify-items: center;
 }
 
-.header-group span {}
-
 .header-group a {
     color: white;
     display: grid;
