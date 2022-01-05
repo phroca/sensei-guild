@@ -1,10 +1,8 @@
 import * as React from "react"
-import { useState, useEffect } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import "./cashprize.css"
-import { useMoralisWeb3Api, useMoralisWeb3ApiCall } from "react-moralis"
-import { useNativeBalance } from "react-moralis";
+import { useERC20Balances } from "react-moralis";
 
 const options = { chain: '0x61', address: '0x97215e5bBc378bb483197F383597e1F576D49C6D'};
 
@@ -25,15 +23,13 @@ const CashPrizeNumber = styled.h1`
 `
 
 const CashPrize = () => {
-    const [cashprize, setCashprize] = React.useState(0);
-
-    const { getBalance, data: balance, nativeToken, error, isLoading } = useNativeBalance(options);
-    console.log(balance.formatted);
+    const { data } = useERC20Balances(); 
     
     return (
         <CashPrizeContainer className="bg-gradient-animated">
             <CashPrizeNumber>
-                {balance.formatted}      
+                {!data && 0}
+                { data && data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0].balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0].decimals)} $SENSEI
             </CashPrizeNumber>
             <Link to="/cashprize"><button className="sensei-btn big-btn">Cashprize</button></Link>
         </CashPrizeContainer>

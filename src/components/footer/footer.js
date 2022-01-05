@@ -106,7 +106,7 @@ const Footer = () => {
         <FooterContainer>
             <FooterTop>
                 <FooterLogo>
-                    <Link><img src={imgLogo} alt="logo Sensei" height="182" width="182" /></Link>  
+                    <Link to="/"><img src={imgLogo} alt="logo Sensei" height="182" width="182" /></Link>  
                 </FooterLogo>
                 <FooterColumn>
                     <FooterColumnTitle>
