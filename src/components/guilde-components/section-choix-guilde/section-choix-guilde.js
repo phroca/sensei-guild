@@ -54,7 +54,7 @@ const SectionChoixGuilde = () => {
             </ChoixGuildeTitle>
             <ChoixGuildeListe>
                 <GuildeSection>
-                    <img className="img-gaia" src={imgGaia} alt="gaia" />
+                    <img className="img-gaia" src={imgGaia} alt="gaia" width="250"/>
                     <div className="subtext">
                         En tant que divinité, Gaïa est, d'une certaine manière, 
                         la gardienne du pouvoir divin : 
@@ -64,7 +64,7 @@ const SectionChoixGuilde = () => {
                     <Link><button className="sensei-btn big-btn">enter GAIA</button></Link>
                 </GuildeSection>
                 <GuildeSection>
-                    <img className="img-orion" src={imgOrion} alt="orion" />
+                    <img className="img-orion" src={imgOrion} alt="orion" width="250"/>
                     <div className="subtext">
                         Le mythe de Pégase est issu des dieux lyciens et assyriens. 
                         C'est un Symbole de sagesse avec une profonde symbolique en 
@@ -74,7 +74,7 @@ const SectionChoixGuilde = () => {
                     <Link><button className="sensei-btn big-btn">enter ORION</button></Link>
                 </GuildeSection>
                 <GuildeSection>
-                     <img className="img-pegasus" src={imgPegasus} alt="pegasus" />
+                     <img className="img-pegasus" src={imgPegasus} alt="pegasus" width="250"/>
                     <div className="subtext">
                         La constellation d'Orion est une des 
                         plus belles constellations du ciel.
