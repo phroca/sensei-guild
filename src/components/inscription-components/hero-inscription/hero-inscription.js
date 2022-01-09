@@ -3,11 +3,11 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import useInput from "../../../hooks/useInput"
-
+import { useState } from "react"
 import imgGaia from "../../../images/inscription-img/gaia.png"
 import imgOrion from "../../../images/inscription-img/orion.png"
 import imgPegasus from "../../../images/inscription-img/pagasus.png"
-
+import { useMoralis } from "react-moralis"
 
 const HeroInscriptionContainer = styled.div`
     background: black;
@@ -72,14 +72,37 @@ const HeroInscriptionGuildeChoice = styled.div`
 `
 
 const HeroInscription = () => {
- 
-
+    const {isAuthenticated, user, setUserData} = useMoralis();
     const email = useInput("");
     const telegram = useInput("");
     const twitter = useInput("");
+    const [guild, setGuild] = useState();
 
+    const handleGaiaChange = () => {
+        setGuild("gaia")
+    };
+
+    const handleOrionChange = () => {
+        setGuild("orion")
+    };
+
+    const handlePegasusChange = () => {
+        setGuild("pegasus")
+    };
+
+    
     const submit = (event) => {
         event.preventDefault();
+        if(isAuthenticated){
+            if(user){
+                setUserData({
+                    email: email.value,
+                    telegramUser: telegram.value,
+                    twitterUser: twitter.value,
+                    guildName: guild
+                  })
+            }
+        }
     }
         
     return (
@@ -96,6 +119,18 @@ const HeroInscription = () => {
                     des cashprize exceptionnels
                 </HeroInscriptionText>
                 <HeroInscriptionGuildeChoice>
+                <div>
+                    <input type="radio" value="gaia" name="guild" id="gaia"  onChange={handleGaiaChange} />
+                    <label htmlFor="gaia">Gaia</label>
+                </div>
+                <div>
+                    <input type="radio" value="orion" name="guild" id="orion" onChange={handleOrionChange} />
+                    <label htmlFor="orion">Orion</label>
+                </div>
+                <div>
+                    <input type="radio" value="pegasus" name="guild" id="pegasus" onChange={handlePegasusChange} />
+                    <label htmlFor="pegasus">Pegasus</label>
+                </div>
                     <img className="img-gaia" src={imgGaia} width="110" height="110" alt="gaia" />
                     <img className="img-orion" src={imgOrion} width="110" height="110" alt="orion" />
                     <img className="img-pegasus" src={imgPegasus} width="110" height="110" alt="pegasus" />

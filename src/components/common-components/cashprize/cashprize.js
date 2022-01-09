@@ -29,7 +29,7 @@ const CashPrize = () => {
         <CashPrizeContainer className="bg-gradient-animated">
             <CashPrizeNumber>
                 {!data && 0}
-                { data && data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0].balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0].decimals)} $SENSEI
+                { data && data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals)} $SENSEI
             </CashPrizeNumber>
             <Link to="/cashprize"><button className="sensei-btn big-btn">Cashprize</button></Link>
         </CashPrizeContainer>

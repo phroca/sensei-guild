@@ -21,7 +21,7 @@ const Account = () => {
 
     const handleAuthenticate = async () => {
         try {
-            await authenticate({ provider: "injected" });
+            await authenticate({ provider: "injected", signingMessage: "authenticate to Sensei Guild" });
           } catch (e) {
             console.error(e);
           }

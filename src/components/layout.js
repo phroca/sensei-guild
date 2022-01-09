@@ -3,13 +3,14 @@
  */
 
 import * as React from "react"
+import { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header/header"
 import "./layout.css"
 import Footer from "./footer/footer"
-import { MoralisProvider } from "react-moralis";
+import { MoralisProvider, useMoralis } from "react-moralis";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
     }
   `)
 
+  
   return (
     <MoralisProvider appId={process.env.GATSBY_MORALIS_API_APP_ID} serverUrl={process.env.GATSBY_MORALIS_API_SERVER_URL}>
       <Header/>

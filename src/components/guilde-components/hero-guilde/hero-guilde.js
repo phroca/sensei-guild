@@ -56,17 +56,16 @@ const HeroGuilde = () => {
         <HeroGuildeContainer>
             <HeroGuildePartLeft>
                 <HeroTitle>
-                    Découvrez la guilde <br /> 
-                    qu'il vous faut ! <br />
+                    Inscrivez-vous pour<br />
                     Jouez gratuitement,<br />
                     dès maintenant !
                 </HeroTitle>
                 <HeroSubtitle>
                     Amusez-vous, restez soudés et vivez l’aventure à plusieurs <br />
-                    pour faire gagner votre guilde et remportez des Cashprize exceptionnels en $SENSEI <br />
-                    ou BNB.
+                    pour faire gagner votre guilde et remportez des Cashprize<br /> 
+                    exceptionnels en $SENSEI ou BNB.
                 </HeroSubtitle>
-                <Link to="/"><button className="sensei-btn">Cashprize</button></Link>
+                <Link to="/inscription"><button className="sensei-btn">Inscription</button></Link>
             </HeroGuildePartLeft>
             <HeroGuildePartRight>
                 <img className="hero--img-gaia" src={imgGaia} alt="gaia" />

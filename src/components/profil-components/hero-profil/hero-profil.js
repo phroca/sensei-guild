@@ -2,12 +2,13 @@ import * as React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import imgGaia from "../../../images/img-gaia.svg"
-import imgOrion from "../../../images/img-orion.svg"
-import imgPegasus from "../../../images/img-pegasus.svg"
+import imgGaia from "../../../images/home-img/hero-img/GAIA.png"
+import imgOrion from "../../../images/home-img/hero-img/ORION.png"
+import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
 import rewards from "../../../images/profil-img/rewards.png"
 import profilEmpty from "../../../images/profil-img/profil-empty.png"
 
+import { useMoralis } from "react-moralis"
 const HeroProfilContainer = styled.div`
         display: grid;
         grid-template-rows: repeat(2, 1fr);
@@ -95,21 +96,21 @@ const HeroProfilTotalRecompenseValueTitle = styled.h1`
     font-size: 64px;
 `
 const HeroProfil = () => {
-
+    const {isAuthenticated, user} = useMoralis();
     
     return (
         <HeroProfilContainer>
             <HeroProfilInfos>
                 <HeroProfilPartLeft>
-                    <ProfilImage src={profilEmpty} width="300" height="300" />
+                    <ProfilImage src={isAuthenticated && user?.get("userProfile") ? user?.get("userProfile").url() : profilEmpty} width="300" height="300" />
                     <ProfilSocialLinks>
-                        <SocialLink>@Telegram</SocialLink>
-                        <SocialLink>@Twitter</SocialLink>
-                        <SocialLink>@Discord</SocialLink>
+                        <SocialLink>@{user?.get("telegramUser")}</SocialLink>
+                        <SocialLink>@{user?.get("twitterUser")}</SocialLink>
+                        <SocialLink>@Discord - SOON</SocialLink>
                     </ProfilSocialLinks>
                 </HeroProfilPartLeft>
                 <HeroProfilPartRight>
-                    <img src={imgGaia} alt="gaia" width="550" height= "550"/>
+                    <img src={ user?.get("guildName") === "gaia" ? imgGaia : user?.get("guildName") === "orion" ? imgOrion : imgPegasus} alt="img-guild profil" width="550" height= "550"/>
                     <ProfilTelegramLink href="/profil" target="_blank">Lien Telegram</ProfilTelegramLink>
                 </HeroProfilPartRight>
             </HeroProfilInfos>
