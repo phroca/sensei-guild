@@ -104,8 +104,8 @@ const HeroProfil = () => {
                 <HeroProfilPartLeft>
                     <ProfilImage src={isAuthenticated && user?.get("userProfile") ? user?.get("userProfile").url() : profilEmpty} width="300" height="300" />
                     <ProfilSocialLinks>
-                        <SocialLink>@{user?.get("telegramUser")}</SocialLink>
-                        <SocialLink>@{user?.get("twitterUser")}</SocialLink>
+                        <SocialLink>@{isAuthenticated && user?.get("telegramUser")}</SocialLink>
+                        <SocialLink>@{isAuthenticated && user?.get("twitterUser")}</SocialLink>
                         <SocialLink>@Discord - SOON</SocialLink>
                     </ProfilSocialLinks>
                 </HeroProfilPartLeft>
