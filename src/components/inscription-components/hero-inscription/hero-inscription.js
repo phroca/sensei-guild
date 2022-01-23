@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 
 import useInput from "../../../hooks/useInput"
 import { useState } from "react"
-import imgGaia from "../../../images/inscription-img/gaia.png"
-import imgOrion from "../../../images/inscription-img/orion.png"
-import imgPegasus from "../../../images/inscription-img/pagasus.png"
+import imgGaia from "../../../images/home-img/hero-img/GAIA.png"
+import imgOrion from "../../../images/home-img/hero-img/ORION.png"
+import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
 import { useMoralis } from "react-moralis"
 
 const HeroInscriptionContainer = styled.div`
@@ -44,7 +44,7 @@ const InscriptionInput = styled.input`
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0px 20px 40px rgba(31, 47, 71, 0.25), 0px 1px 5px rgba(0, 0, 0, 0.1), inset 0 0 0 0.5px rgba(255, 255, 255, 0.4);
     border: 1px solid rgba(250, 250, 250, 0.4);
-
+    color: white;
     :focus {
         outline: none;
     }
@@ -71,6 +71,18 @@ const HeroInscriptionGuildeChoice = styled.div`
     grid-gap: 20px;
 `
 
+const SectionChoix = styled.div`
+    display: grid;
+    grid-template-columns: 110px 20px auto;
+    justify-content: center;
+    align-items: center;
+
+`
+
+const LabelInscription = styled.label`
+    color: white;
+    text-transform: uppercase;
+`
 const HeroInscription = () => {
     const {isAuthenticated, user, setUserData} = useMoralis();
     const email = useInput("");
@@ -119,21 +131,24 @@ const HeroInscription = () => {
                     des cashprize exceptionnels
                 </HeroInscriptionText>
                 <HeroInscriptionGuildeChoice>
-                <div>
-                    <input type="radio" value="gaia" name="guild" id="gaia"  onChange={handleGaiaChange} />
-                    <label htmlFor="gaia">Gaia</label>
-                </div>
-                <div>
-                    <input type="radio" value="orion" name="guild" id="orion" onChange={handleOrionChange} />
-                    <label htmlFor="orion">Orion</label>
-                </div>
-                <div>
-                    <input type="radio" value="pegasus" name="guild" id="pegasus" onChange={handlePegasusChange} />
-                    <label htmlFor="pegasus">Pegasus</label>
-                </div>
+                <SectionChoix>
                     <img className="img-gaia" src={imgGaia} width="110" height="110" alt="gaia" />
+                    <input type="radio" value="gaia" name="guild" id="gaia"  onChange={handleGaiaChange} />
+                    <LabelInscription htmlFor="gaia">Gaia</LabelInscription>
+                </SectionChoix>
+                <SectionChoix>
                     <img className="img-orion" src={imgOrion} width="110" height="110" alt="orion" />
+                    <input type="radio" value="orion" name="guild" id="orion" onChange={handleOrionChange} />
+                    <LabelInscription htmlFor="orion">Orion</LabelInscription>
+                </SectionChoix>
+                <SectionChoix>
                     <img className="img-pegasus" src={imgPegasus} width="110" height="110" alt="pegasus" />
+                    <input type="radio" value="pegasus" name="guild" id="pegasus" onChange={handlePegasusChange} />
+                    <LabelInscription htmlFor="pegasus">Pegasus</LabelInscription>
+                </SectionChoix>
+                    
+                    
+                    
                 </HeroInscriptionGuildeChoice>
                 <button type="submit" className="sensei-btn">GO</button>
             </FormWrapper>

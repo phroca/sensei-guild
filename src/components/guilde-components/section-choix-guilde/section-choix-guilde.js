@@ -1,12 +1,12 @@
 import * as React from "react"
 import { useEffect } from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 import imgGaia from "../../../images/home-img/sections-img/GAIA.png"
 import imgOrion from "../../../images/home-img/sections-img/ORION.png"
 import imgPegasus from "../../../images/home-img/sections-img/PEGASUS.png"
 import { useMoralis } from "react-moralis";
+import { SenseiLink } from "../../common-components/containers/links/sensei-link"
 
 const ChoixGuildeContainer = styled.div`
         background: black;
@@ -67,7 +67,7 @@ const SectionChoixGuilde = () => {
                         c'est elle qui provoque la rébellion
                         Elle est aussi la première divinité qui pouvait prédire l'avenir.
                     </div>
-                    <Link to="/inscription"><button onClick={() => {}} className="sensei-btn big-btn">enter GAIA</button></Link>
+                    <SenseiLink to="/inscription" className="sensei-btn big-btn">enter GAIA</SenseiLink>
                 </GuildeSection>
                 <GuildeSection>
                     <img className="img-orion" src={imgOrion} alt="orion" width="250"/>
@@ -77,7 +77,7 @@ const SectionChoixGuilde = () => {
                         relation avec l'énergie spirituelle qui permet d'accéder au 
                         domaine des dieux, le mont Olympe, lui est attachée.
                     </div>
-                    <Link to="/inscription"><button className="sensei-btn big-btn">enter ORION</button></Link>
+                    <SenseiLink to="/inscription" className="sensei-btn big-btn">enter ORION</SenseiLink>
                 </GuildeSection>
                 <GuildeSection>
                      <img className="img-pegasus" src={imgPegasus} alt="pegasus" width="250"/>
@@ -88,7 +88,7 @@ const SectionChoixGuilde = () => {
                         600 fois plus grosse que le Soleil et 
                         qui règne dans le ciel de l'univers. 
                     </div>
-                    <Link to="/inscription"><button className="sensei-btn big-btn">enter PEGASUS</button></Link>
+                    <SenseiLink to="/inscription" className="sensei-btn big-btn">enter PEGASUS</SenseiLink>
                 </GuildeSection>
             </ChoixGuildeListe>
         </ChoixGuildeContainer>

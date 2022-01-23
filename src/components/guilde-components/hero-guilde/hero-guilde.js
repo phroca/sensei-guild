@@ -6,6 +6,7 @@ import imgGaia from "../../../images/home-img/hero-img/GAIA.png"
 import imgOrion from "../../../images/home-img/hero-img/ORION.png"
 import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
 import "./hero-guilde.css"
+import { SenseiLink } from "../../common-components/containers/links/sensei-link"
 
 const HeroGuildeContainer = styled.div`
         background: black;
@@ -65,7 +66,7 @@ const HeroGuilde = () => {
                     pour faire gagner votre guilde et remportez des Cashprize<br /> 
                     exceptionnels en $SENSEI ou BNB.
                 </HeroSubtitle>
-                <Link to="/inscription"><button className="sensei-btn">Inscription</button></Link>
+                <SenseiLink to="/inscription" className="sensei-btn">Inscription</SenseiLink>
             </HeroGuildePartLeft>
             <HeroGuildePartRight>
                 <img className="hero--img-gaia" src={imgGaia} alt="gaia" />

@@ -8,7 +8,7 @@ import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
 import rewards from "../../../images/profil-img/rewards.png"
 import profilEmpty from "../../../images/profil-img/profil-empty.png"
 
-import { useMoralis } from "react-moralis"
+import { useERC20Balances, useMoralis, useNativeBalance } from "react-moralis"
 const HeroProfilContainer = styled.div`
         display: grid;
         grid-template-rows: repeat(2, 1fr);
@@ -97,7 +97,9 @@ const HeroProfilTotalRecompenseValueTitle = styled.h1`
 `
 const HeroProfil = () => {
     const {isAuthenticated, user} = useMoralis();
-    
+    const { data } = useERC20Balances(); 
+    const { data: balance } = useNativeBalance({ chain : "0x61" });
+
     return (
         <HeroProfilContainer>
             <HeroProfilInfos>
@@ -116,12 +118,20 @@ const HeroProfil = () => {
             </HeroProfilInfos>
             <HeroProfilTotalRecompenseContainer>
                 <HeroProfilTotalRecompenseTitle>
-                    TOTAL RECOMPENSE $SENSEI : 
+                    TOTAL GAIN $SENSEI & BNB 
                 </HeroProfilTotalRecompenseTitle>
                 <HeroProfilTotalRecompenseValue>
                     <img src={rewards} alt="rewards image" />
                     <HeroProfilTotalRecompenseValueTitle>
-                        150 000 000 $SENSEI
+                    {!data && 0}
+                    { data && data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals)} $SENSEI
+                    </HeroProfilTotalRecompenseValueTitle>
+                    <img src={rewards} alt="rewards image" />
+                </HeroProfilTotalRecompenseValue>
+                <HeroProfilTotalRecompenseValue>
+                    <img src={rewards} alt="rewards image" />
+                    <HeroProfilTotalRecompenseValueTitle>
+                    {balance.formatted?.split(" ")[0]} $BNB
                     </HeroProfilTotalRecompenseValueTitle>
                     <img src={rewards} alt="rewards image" />
                 </HeroProfilTotalRecompenseValue>
