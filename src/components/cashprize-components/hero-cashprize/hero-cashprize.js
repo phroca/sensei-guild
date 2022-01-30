@@ -37,7 +37,7 @@ const HeroCashprize = () => {
 
     return(
         <HeroCashprizeContainer>
-            <CashprizeTitle>CASHPRIZE</CashprizeTitle>
+            <CashprizeTitle>CASHPRIZE EN COURS</CashprizeTitle>
             <CashprizeContent>
                 <CashprizeInSensei>356 566 759 SENSEI</CashprizeInSensei>
                 <CashprizeInBNB>32 BNB</CashprizeInBNB>
