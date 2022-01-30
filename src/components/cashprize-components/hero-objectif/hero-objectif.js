@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 
 import imgCashprize from "../../../images/cashprize-img/cahsprize-img.png"
+import { useMoralisQuery } from "react-moralis";
 
 const CashprizeObjectifContainer = styled.div`
     display: grid;
@@ -44,6 +45,11 @@ const CashprizeObjectifNumber = styled.div`
 `
 
 const HeroObjectif = () => {
+    //const [limit, setLimit] = useState(3);
+    const { data, error, isLoading } = useMoralisQuery("Cashprize", (query) =>
+    query
+    .equalTo("status", "created")
+  );
 
     return(
         <CashprizeObjectifContainer>
@@ -54,7 +60,9 @@ const HeroObjectif = () => {
             </CashprizeHead>
             <CashprizeContent>
                 <CashprizeObjectifTitle>OBJECTIF :</CashprizeObjectifTitle>
-                <CashprizeObjectifNumber>4 000 000 MC</CashprizeObjectifNumber>
+                <CashprizeObjectifNumber> 
+                {data && data.map((item, index) => (<div>{item.get("objectif")} MC</div>))}
+                </CashprizeObjectifNumber>
             </CashprizeContent>
         </CashprizeObjectifContainer>
     )

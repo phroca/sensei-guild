@@ -2,7 +2,7 @@
     "cashprize": {
         "addressCashPrizeInSensei": "0x....",
         "addressCashPrizeInBNB": "0x....",
-        "status": "progress",
+        "status": "created",
         "objectif": 4000000,
         "totalRewardsInSensei": 1230000000,
         "totalRewardsInBNB": 32000,
