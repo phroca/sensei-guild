@@ -6,6 +6,7 @@
     "author": "ROCA IT <roca.philippe63@gmail.com>",
     "dependencies": {
         "@walletconnect/web3-provider": "^1.7.1",
+        "babel-plugin-styled-components": "^2.0.2",
         "gatsby": "^4.6.0",
         "gatsby-plugin-gatsby-cloud": "^4.6.0",
         "gatsby-plugin-image": "^2.6.0",
@@ -14,6 +15,7 @@
         "gatsby-plugin-react-helmet": "^5.6.0",
         "gatsby-plugin-scroll-reveal": "0.0.7",
         "gatsby-plugin-sharp": "^4.6.0",
+        "gatsby-plugin-styled-components": "^5.6.0",
         "gatsby-source-contentful": "^7.4.0",
         "gatsby-source-filesystem": "^4.6.0",
         "gatsby-transformer-sharp": "^4.6.0",
