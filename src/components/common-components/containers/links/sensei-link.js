@@ -7,7 +7,7 @@ export const SenseiLink = ({to, children, className}) => {
 
     const { authenticate, isAuthenticated, account, logout } = useMoralis();
 
-    if (!isAuthenticated || !account) {
+    if (!isAuthenticated) {
         return(
             <Link to={to}><button className={className}>{children}</button></Link>
         )

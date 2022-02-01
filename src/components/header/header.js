@@ -1,46 +1,40 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import "./header.css"
-
+import { useState, useEffect } from "react"
 import logoSensei from "../../images/logo-sensei.png"
 import Account from "../account-component/account"
 
-class Header extends React.Component{
-  constructor(props){
-    super(props);
-    this.state= {
-      hasScrolled: false,
-      isMenuOpened: false
-    }
-    this.handleClickMenuClose = this.handleClickMenuClose.bind(this);
-    this.handleClickMenuOpen = this.handleClickMenuOpen.bind(this);
-  }
-  componentDidMount(){
-    window.addEventListener('scroll', this.handleScroll)
-  }
+const Header = () => {
+   const [hasScrolled, setHasScrolled] = useState(false);
+   //const [isMenuOpened, setMenuOpened] = useState(false);
+   
+  useEffect(()=> {
+    window.addEventListener('scroll', handleScroll);
+  }, []);
+  
+  
 
-  handleScroll = (event) => {
+  const handleScroll = (event) => {
     const scrollTop = window.scrollY;
     if(scrollTop > 50){
-      this.setState({hasScrolled: true});
+      setHasScrolled(true);
     } else {
-      this.setState({hasScrolled: false});
+      setHasScrolled(false);
     }
   }
 
-  handleClickMenuOpen = () => {
-    this.setState({isMenuOpened: true});
+  /*const handleClickMenuOpen = () => {
+    setMenuOpened(true);
   }
 
-  handleClickMenuClose = () => {
-    this.setState({isMenuOpened: false});
-  }
-  render() {
+  const handleClickMenuClose = () => {
+    setMenuOpened(false);
+  }*/
 
     return (
       <div>
-        <div className={this.state.hasScrolled ? 'header header-scrolled' : 'header'}>
+        <div className={hasScrolled ? 'header header-scrolled' : 'header'}>
             <div className="header-group">
               <Link to="/"><img src={logoSensei} alt="sensei-logo" /><span>SENSEI</span></Link>
               <div className="nav-group">
@@ -54,15 +48,7 @@ class Header extends React.Component{
         </div>
       </div>
     )
-  }
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  
 }
 
 export default Header

@@ -17,7 +17,7 @@ outline: none;
 `
 
 const Account = () => {
-    const { authenticate, isAuthenticated, account, logout } = useMoralis();
+    const { authenticate, isAuthenticated, account, logout, user, auth } = useMoralis();
 
     const handleAuthenticate = async () => {
         try {
@@ -27,7 +27,7 @@ const Account = () => {
           }
     }
 
-    if (!isAuthenticated || !account) {
+    if (!isAuthenticated ) {
         return (
             <BtnToAuthenticate onClick={ () => handleAuthenticate()}>
                 <p>Connecter</p>
@@ -36,9 +36,14 @@ const Account = () => {
     }
 
     return (
+        <>
         <BtnToAuthenticate >
-            <p>{getEllipsisTxt(account, 6)}</p>
+            <p>{getEllipsisTxt(user?.get("accounts")[0], 6)}</p> 
         </BtnToAuthenticate>
+        <BtnToAuthenticate onClick={ () => logout()}>
+            <p>se déconnecter</p> 
+        </BtnToAuthenticate>
+        </>
     )
 }
 
