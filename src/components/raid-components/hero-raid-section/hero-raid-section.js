@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import HeroRaid from "../hero-raid/hero-raid"
 import SectionConseil from "../section-conseil/section-conseil"
-
+import { useMoralisQuery } from "react-moralis";
 
 const SectionContainer = styled.div`
     background: black;
@@ -10,11 +10,12 @@ const SectionContainer = styled.div`
 `
 
 const HeroRaidSection = () => {
+    const { data, error, isLoading } = useMoralisQuery("Rule");
 
     return(
         <SectionContainer>
-            <HeroRaid />
-            <SectionConseil />
+            <HeroRaid propRaid={data}/>
+            <SectionConseil propRaid={data}/>
         </SectionContainer>
     )
 }

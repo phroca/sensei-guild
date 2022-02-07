@@ -20,6 +20,7 @@ const SectionConseilTitle = styled.h1`
 const SectionConseilContent = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     justify-items: center;
     align-items: center; 
     grid-gap: 150px;
@@ -34,59 +35,30 @@ const Text = styled.p`
     justify-self: start;
 `
 
-const SectionConseil = () => {
-
-    
+const SectionConseil = ({propRaid}) => {
+    const rules = propRaid && propRaid?.filter(item => !item?.get("isRaidOfTheDay"));
     return (
         <SectionConseilContainer>
             <SectionConseilTitle>
-            CONSEILS & MESSAGES TYPE :
+            ASTUCES & MESSAGES TYPE :
             </SectionConseilTitle>
             <SectionConseilContent>
-                <Text>
-                    MISSION DU JOUR : 🛰 <br />
-                    CIBLE : CoinGecko 🎯<br />
-                    https://www.coingecko.com/en/coins/sensei<br />
-                    Afin de donner davantage de visibilité à $SENSEI sur Coingecko :<br />
-                    1️⃣ Crée un compte sur CoinGecko puis clique sur l'étoile ⭐️ pour ajouter SENSEI à tes favoris, ce qui booste notre classement. 🤝<br />
-                    2️⃣  Vote Good pour soutenir le score de SENSEI. 🤝<br />
-                    Ne sous estime pas la force de ton action, c’est important pour le projet et ça peut nous faire gagner beaucoup de visibilité.<br />
-                    #WEARESENSEI ⛩
-                </Text>
-                <Text>
-                    🚨 MISSION DU JOUR : 🛰<br />
-                    CIBLE : BlockFolio/FTX 🎯<br />
-                    MISSION : Voter sur BlockFolio/FTX 👀<br />
-                    C'est facile et ça prend 15 secondes alors si vous voulez voir le token $SENSEI listé sur BlockFolio/FTX vous pouvez cliquer sur le lien, vous connecter simplement et voter. 🚀<br />
-                    ➡️ https://blockfolio.canny.io/coin-requests/p/sensei-senseiprotocolcom 💎<br />
-                    BONUS : Ajouter un commentaire positif avec le hashtag #WEARESENSEI<br />
-                    OBJECTIF : 1K VOTES 🤝🎯<br />
-                    Après avoir voté vous pouvez cliquer sur la phrase juste en dessous pour montrer votre soutien. 👩‍🚀🌌<br />
-                    #WEARESENSEI ⛩
-                </Text>
-            </SectionConseilContent>
-            <SectionConseilContent>
-                <Text>
-                    MISSION DU JOUR : 🛰<br />
-                    CIBLE : CoinGecko 🎯<br />
-                    ➡️ https://www.coingecko.com/en/coins/sensei<br />
-                    🛰  Afin de donner davantage de visibilité à $SENSEI sur Coingecko :<br />
-                    1️⃣ Crée un compte sur CoinGecko puis clique sur l'étoile ⭐️ pour ajouter SENSEI à tes favoris, ce qui booste notre classement. 🤝<br />
-                    2️⃣  Vote Good pour soutenir le score de SENSEI. 🤝<br />
-                    Ne sous estime pas la force de ton action, c’est important pour le projet et ça peut nous faire gagner beaucoup de visibilité.<br />
-                    #WEARESENSEI ⛩
-                </Text>
-                <Text>
-                    🚨 MISSION DU JOUR : 🛰<br />
-                    CIBLE : BlockFolio/FTX 🎯<br />
-                    MISSION : Voter sur BlockFolio/FTX 👀<br />
-                    C'est facile et ça prend 15 secondes alors si vous voulez voir le token $SENSEI listé sur BlockFolio/FTX vous pouvez cliquer sur le lien, vous connecter simplement et voter. 🚀<br />
-                    ➡️ https://blockfolio.canny.io/coin-requests/p/sensei-senseiprotocolcom 💎<br />
-                    BONUS : Ajouter un commentaire positif avec le hashtag #WEARESENSEI<br />
-                    OBJECTIF : 1K VOTES 🤝🎯<br />
-                    Après avoir voté vous pouvez cliquer sur la phrase juste en dessous pour montrer votre soutien. 👩‍🚀🌌<br />
-                    #WEARESENSEI ⛩
-                </Text>
+                {rules.map(item=>(
+                    <Text>
+                    MISSION DU JOUR : <br />
+                    CIBLE : {item?.get("target")}🎯<br />
+                    {item?.get("linkTarget")}<br />
+                    <p dangerouslySetInnerHTML={{__html: item?.get("ruleParagraph")}}></p>
+                    </Text>
+                ))}
+                {rules.map(item=>(
+                    <Text>
+                    MISSION DU JOUR : <br />
+                    CIBLE : {item?.get("target")}🎯<br />
+                    {item?.get("linkTarget")}<br />
+                    <p dangerouslySetInnerHTML={{__html: item?.get("ruleParagraph")}}></p>
+                    </Text>
+                ))}
             </SectionConseilContent>
         </SectionConseilContainer>
     ) 

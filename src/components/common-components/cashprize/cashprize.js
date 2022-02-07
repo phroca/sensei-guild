@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import "./cashprize.css"
 import { useERC20Balances } from "react-moralis";
 
-const options = { chain: '0x61', address: '0x97215e5bBc378bb483197F383597e1F576D49C6D'};
+const options = { chain: '0x61', address: process.env.GATSBY_MORALIS_CASHPRIZE_ADDRESS};
 
 const CashPrizeContainer = styled.div`
     height: 750px;
@@ -23,7 +23,7 @@ const CashPrizeNumber = styled.h1`
 `
 
 const CashPrize = () => {
-    const { data } = useERC20Balances(); 
+    const { data } = useERC20Balances(options); 
     
     return (
         <CashPrizeContainer className="bg-gradient-animated">

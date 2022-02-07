@@ -7,8 +7,8 @@ import imgOrion from "../../../images/home-img/hero-img/ORION.png"
 import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
 import rewards from "../../../images/profil-img/rewards.png"
 import profilEmpty from "../../../images/profil-img/profil-empty.png"
-
-import { useERC20Balances, useMoralis, useNativeBalance } from "react-moralis"
+import { useEffect } from "react"
+import { useERC20Balances, useMoralis, useNativeBalance, useMoralisWeb3ApiCall, useMoralisWeb3Api, useTokenPrice } from "react-moralis"
 const HeroProfilContainer = styled.div`
         display: grid;
         grid-template-rows: repeat(2, 1fr);
@@ -95,10 +95,27 @@ const HeroProfilTotalRecompenseValueTitle = styled.h1`
     color: white;
     font-size: 64px;
 `
+
+
 const HeroProfil = () => {
-    const {isAuthenticated, user} = useMoralis();
-    const { data } = useERC20Balances(); 
-    const { data: balance } = useNativeBalance({ chain : "0x61" });
+    const options = { chain: '0x61', address: '0xbfe92F7AF15441eBB41aC49902Bf1C073EA05285'};
+    const {isAuthenticated, user, Moralis} = useMoralis();
+    const { fetchERC20Balances, data } = useERC20Balances(options);
+    const { getBalances, data: balance, nativeToken, error, isLoading } = useNativeBalance(options);
+    //const Web3Api = useMoralisWeb3Api();
+    
+    //const { fetch, data: tokenBalances, error, isLoading } = useMoralisWeb3ApiCall(Web3Api.account.getTokenBalances, options);
+    //const balances = Web3Api.account.getTokenBalances(options);
+    //const test = Web3Api.token.getTokenPrice(options);
+      
+      useEffect(()=> {
+        if(!data) {
+            //fetchERC20Balances({ params: options });
+        }
+        if(!balance){
+            ///fetchTokenPrice({ params: options });
+        }
+      });
 
     return (
         <HeroProfilContainer>
@@ -131,7 +148,8 @@ const HeroProfil = () => {
                 <HeroProfilTotalRecompenseValue>
                     <img src={rewards} alt="rewards image" />
                     <HeroProfilTotalRecompenseValueTitle>
-                    {balance.formatted?.split(" ")[0]} $BNB
+                    {!balance && 0}
+                    {balance && balance?.formatted?.split(" ")[0]} $BNB
                     </HeroProfilTotalRecompenseValueTitle>
                     <img src={rewards} alt="rewards image" />
                 </HeroProfilTotalRecompenseValue>
