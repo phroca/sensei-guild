@@ -44,13 +44,6 @@ const ChoixGuildeContainer = styled.div`
     `
 
 const SectionChoixGuilde = () => {
-    const {isAuthenticated, user} = useMoralis();
-    useEffect(()=> {
-        isAuthenticated && user.attributes.emailVerified ? console.log("verified !!") : console.log("NOT VERIFIED !!")
-    })
-    
-    
-
     return (
         <ChoixGuildeContainer>
             <ChoixGuildeTitle>

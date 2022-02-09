@@ -123,13 +123,13 @@ const HeroProfil = () => {
                 <HeroProfilPartLeft>
                     <ProfilImage src={isAuthenticated && user?.get("userProfile") ? user?.get("userProfile").url() : profilEmpty} width="300" height="300" />
                     <ProfilSocialLinks>
-                        <SocialLink>@{isAuthenticated && user?.get("telegramUser")}</SocialLink>
-                        <SocialLink>@{isAuthenticated && user?.get("twitterUser")}</SocialLink>
+                        <SocialLink>Telegram : @{isAuthenticated && user?.get("telegramUser")}</SocialLink>
+                        <SocialLink>Twitter : @{isAuthenticated && user?.get("twitterUser")}</SocialLink>
                         <SocialLink>@Discord - SOON</SocialLink>
                     </ProfilSocialLinks>
                 </HeroProfilPartLeft>
                 <HeroProfilPartRight>
-                    <img src={ user?.get("guildName") === "gaia" ? imgGaia : user?.get("guildName") === "orion" ? imgOrion : imgPegasus} alt="img-guild profil" width="550" height= "550"/>
+                    <img src={ user?.get("guildName") === "gaia" ? imgGaia : user?.get("guildName") === "orion" ? imgOrion : imgPegasus} alt="img-guild profil" width="300" height= "300"/>
                     <ProfilTelegramLink href="/profil" target="_blank">Lien Telegram</ProfilTelegramLink>
                 </HeroProfilPartRight>
             </HeroProfilInfos>
@@ -140,16 +140,14 @@ const HeroProfil = () => {
                 <HeroProfilTotalRecompenseValue>
                     <img src={rewards} alt="rewards image" />
                     <HeroProfilTotalRecompenseValueTitle>
-                    {!data && 0}
-                    { data && data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals)} $SENSEI
+                    {isAuthenticated && user?.get("rewardsInSensei") ? user?.get("rewardsInSensei") : 0} $SENSEI
                     </HeroProfilTotalRecompenseValueTitle>
                     <img src={rewards} alt="rewards image" />
                 </HeroProfilTotalRecompenseValue>
                 <HeroProfilTotalRecompenseValue>
                     <img src={rewards} alt="rewards image" />
                     <HeroProfilTotalRecompenseValueTitle>
-                    {!balance && 0}
-                    {balance && balance?.formatted?.split(" ")[0]} $BNB
+                    {isAuthenticated && user?.get("rewardsInBNB") ? user?.get("rewardsInBNB") : 0} $BNB
                     </HeroProfilTotalRecompenseValueTitle>
                     <img src={rewards} alt="rewards image" />
                 </HeroProfilTotalRecompenseValue>
