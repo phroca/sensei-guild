@@ -1,7 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
 import SenseiUploadComponent from "./sensei-upload-component/sensei-upload-component"
-import { useState } from "react"
 
 const SenseiLabsContainer = styled.div`
     background: black;
@@ -27,39 +26,14 @@ const SenseiLabsUploadContainer = styled.div`
     align-content: center;
 `
 
-const UploadSelect = styled.select`
-    background: transparent;
-    color: white;
-    font-family: 'AirbnbCerealBlack';
-    font-size: 50px;
-    outline: none;
-    border: none;
-`
-
-const UploadOption = styled.option`
-    background: black;
-    color: white;
-`
-
 const ProfilSenseiLabs = () => {
-    const[typeUpload, setTypeUpload] = useState("twitter");
-
-    const handleChange = (e) => {
-        setTypeUpload(e.target.value)
-    }
-
     return (
         <SenseiLabsContainer>
             <SenseiLabsTitle>
                 SENSEI LABS
             </SenseiLabsTitle>
             <SenseiLabsUploadContainer>
-                <UploadSelect onChange={(e) => handleChange(e)}>
-                    <UploadOption value="twitter">TWITTER LABS</UploadOption>
-                    <UploadOption value="telegram">TELEGRAM LABS</UploadOption>
-                    <UploadOption value="autre">AUTRE</UploadOption>
-                </UploadSelect>
-                <SenseiUploadComponent selectedValue={typeUpload}/>
+                <SenseiUploadComponent/>
             </SenseiLabsUploadContainer>
         </SenseiLabsContainer>
     )

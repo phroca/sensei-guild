@@ -3,3 +3,7 @@ input[type="file" i] {
     color: transparent;
     font-size: 1px;
 }
+
+.disabled {
+    display: none;
+}
