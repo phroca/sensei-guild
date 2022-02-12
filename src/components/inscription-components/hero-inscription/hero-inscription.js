@@ -27,6 +27,20 @@ const HeroInscriptionContainer = styled.div`
     }
     
 `
+
+const HeroInscriptionTitle = styled.h1`
+    font-family: "AirbnbCerealBlack";
+    color: white;
+    font-size: 50px;
+    text-align: center;
+`
+
+const HeroInscriptionSubtitle = styled.h2`
+    font-family: "AirbnbCerealBlack";
+    color: white;
+    font-size: 24px;
+    text-align: center;
+`
 const FormWrapper = styled.form`
     display: grid;
     grid-template-rows: repeat(5, 115px);
@@ -34,6 +48,16 @@ const FormWrapper = styled.form`
     grid-gap: 20px;
     padding-bottom: 50px;
 `;
+
+const InputWrapper = styled.div`
+    display: grid;
+    grid-template-rows: auto;
+`
+    
+const LabelInput = styled.label`
+    color: white;
+    text-transform: uppercase;
+`
 
 const InscriptionInput = styled.input`
     background: rgba(255, 255, 255, 0.2);
@@ -55,13 +79,6 @@ const HeroInscriptionPseudosSocial = styled.div`
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     grid-gap: 20px;
-`
-
-const HeroInscriptionText = styled.h1`
-    font-family: "AirbnbCerealBlack";
-    color: white;
-    font-size: 24px;
-    text-align: center;
 `
 
 const HeroInscriptionGuildeChoice = styled.div`
@@ -112,24 +129,32 @@ const HeroInscription = () => {
                     telegramUser: telegram.value,
                     twitterUser: twitter.value,
                     guildName: guild
-                  })
+                  }).then(() =>{
+                    window.location = "/";
+                  });
             }
         }
     }
         
     return (
         <HeroInscriptionContainer>
+            <HeroInscriptionTitle>Inscrivez-vous</HeroInscriptionTitle>
+            <HeroInscriptionSubtitle>Sélectionnez votre guilde, vivez l’aventure à plusieurs<br/> et remportez des cashprizes exceptionnels ! </HeroInscriptionSubtitle>
             <FormWrapper onSubmit={(e) => submit(e)}>
-                <InscriptionInput placeholder="Email" {...email}></InscriptionInput>
-
+                <InputWrapper>
+                    <LabelInput htmlFor="email">email</LabelInput>
+                    <InscriptionInput id="email" placeholder="Email" {...email}></InscriptionInput>
+                </InputWrapper>
                 <HeroInscriptionPseudosSocial>
-                    <InscriptionInput placeholder="@telegram" {...telegram}></InscriptionInput>
-                    <InscriptionInput placeholder="@twitter" {...twitter}></InscriptionInput>
+                <InputWrapper>
+                    <LabelInput htmlFor="telegram">Telegram</LabelInput>
+                    <InscriptionInput id="telegram" placeholder="@telegram" {...telegram}></InscriptionInput>
+                </InputWrapper>
+                <InputWrapper>
+                    <LabelInput htmlFor="twitter">Twitter</LabelInput>
+                    <InscriptionInput id="twitter" placeholder="@twitter" {...twitter}></InscriptionInput>
+                </InputWrapper> 
                 </HeroInscriptionPseudosSocial>
-                <HeroInscriptionText>
-                    Vivez l’aventure à plusieurs et remportez <br />
-                    des cashprize exceptionnels
-                </HeroInscriptionText>
                 <HeroInscriptionGuildeChoice>
                 <SectionChoix>
                     <img className="img-gaia" src={imgGaia} width="110" height="110" alt="gaia" />

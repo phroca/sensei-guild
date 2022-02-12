@@ -11,11 +11,10 @@ import { useEffect } from "react"
 import { useERC20Balances, useMoralis, useNativeBalance, useMoralisWeb3ApiCall, useMoralisWeb3Api, useTokenPrice } from "react-moralis"
 const HeroProfilContainer = styled.div`
         display: grid;
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: 450px 1fr;
         justify-items: center;
         align-items: center;
         grid-gap: 50px;
-        padding: 50px 0;
     `
 const HeroProfilInfos = styled.div`
     display: grid;
@@ -23,7 +22,6 @@ const HeroProfilInfos = styled.div`
     justify-items: center;
     align-items: center;
     grid-gap: 150px;
-    padding: 50px 0;
 `
 const HeroProfilPartLeft = styled.div`
     display: grid;
@@ -57,9 +55,15 @@ const SocialLink = styled.h2`
 `
 const HeroProfilPartRight = styled.div`
     display: grid;
-    grid-template-rows: 560px 20px;
+    grid-template-rows: 320px 70px 20px;
     justify-items: center;
     align-items: center;
+`
+const HeroProfilGuildName = styled.h2`
+    font-family: "AirbnbCerealBlack";
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
 `
 
 const ProfilTelegramLink = styled.a`
@@ -71,16 +75,17 @@ const ProfilTelegramLink = styled.a`
 
 const HeroProfilTotalRecompenseContainer = styled.div`
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
+    width: 100%;
 `
 
 const HeroProfilTotalRecompenseTitle = styled.h1`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 50px;
-
+    justify-self: start;
 `
 const HeroProfilTotalRecompenseValue = styled.div`
     display: grid;
@@ -130,6 +135,7 @@ const HeroProfil = () => {
                 </HeroProfilPartLeft>
                 <HeroProfilPartRight>
                     <img src={ user?.get("guildName") === "gaia" ? imgGaia : user?.get("guildName") === "orion" ? imgOrion : imgPegasus} alt="img-guild profil" width="300" height= "300"/>
+                    <HeroProfilGuildName>{user?.get("guildName")}</HeroProfilGuildName>
                     <ProfilTelegramLink href="/profil" target="_blank">Lien Telegram</ProfilTelegramLink>
                 </HeroProfilPartRight>
             </HeroProfilInfos>

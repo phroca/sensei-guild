@@ -21,7 +21,7 @@ const Account = () => {
 
     const handleAuthenticate = async () => {
         try {
-            await authenticate({ provider: "injected", signingMessage: "authenticate to Sensei Guild" });
+            await authenticate({ provider: "injected", signingMessage: "Authenticate to Sensei Guild" });
           } catch (e) {
             console.error(e);
           }
@@ -35,12 +35,17 @@ const Account = () => {
         )
     }
 
+    const handleLogout = () => {
+        logout();
+        if (window.location.pathname !== "/") window.location = "/";
+    }
+
     return (
         <>
         <BtnToAuthenticate >
             <p>{getEllipsisTxt(user?.get("accounts")[0], 6)}</p> 
         </BtnToAuthenticate>
-        <BtnToAuthenticate onClick={ () => logout()}>
+        <BtnToAuthenticate onClick={ () => handleLogout()}>
             <p>se déconnecter</p> 
         </BtnToAuthenticate>
         </>

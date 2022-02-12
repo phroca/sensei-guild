@@ -140,7 +140,7 @@ const SenseiUploadComponent = () => {
         if(data && data.length > 0){
             const userData =  data.filter(elt => {
                 const eltId = elt?.get("user").id;
-                return eltId === user.id;
+                return eltId === user?.id;
 
             });
             const conteneurFile = [];
@@ -198,9 +198,13 @@ const SenseiUploadComponent = () => {
     return (
         <UploadCardContainer>
             <UploadSelect onChange={(e) => handleChange(e)}>
-                        <UploadOption value="twitter">TWITTER LABS</UploadOption>
-                        <UploadOption value="telegram">TELEGRAM LABS</UploadOption>
-                        <UploadOption value="autre">AUTRE</UploadOption>
+                        <UploadOption value="twitter">TWITTER</UploadOption>
+                        <UploadOption value="reddit">REDDIT</UploadOption>
+                        <UploadOption value="telegram">TELEGRAM</UploadOption>
+                        <UploadOption value="discord">DISCORD</UploadOption>
+                        <UploadOption value="instagram">INSTAGRAM</UploadOption>
+                        <UploadOption value="coingecko">COINGECKO</UploadOption>                
+                        <UploadOption value="coinmarketcap">COINMARKETCAP</UploadOption>
             </UploadSelect> 
             <UploadCard>
                 <FormUpload onSubmit={(e)=> handleSubmitValidationUpload(e)}>
