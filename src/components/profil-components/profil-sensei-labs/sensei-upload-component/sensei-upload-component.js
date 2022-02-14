@@ -131,7 +131,7 @@ const SenseiUploadComponent = () => {
     const { data, error, isLoading } = useMoralisQuery("Proofs");
     const [filesUpload, setFilesUpload] = useState([]);
     const[typeUpload, setTypeUpload] = useState("twitter");
-
+    const[userDataProof, setUserDataProof] = useState();
     const handleChange = (e) => {
         setTypeUpload(e.target.value)
     }
@@ -145,6 +145,7 @@ const SenseiUploadComponent = () => {
             });
             const conteneurFile = [];
             const proofUpload = userData[0];
+            setUserDataProof(userData[0]);
             const proofFile = proofUpload?.get("proofFile");
             const proofFile2 = proofUpload?.get("proofFile2");
             const proofFile3 = proofUpload?.get("proofFile3");
@@ -178,7 +179,7 @@ const SenseiUploadComponent = () => {
         event.preventDefault();
         if(isAuthenticated){
             if(user){
-                const proofUpload = data[0];
+                const proofUpload = userDataProof;
                 for(let i = 0; i < 3; i++ ){
                     const fileToSave = null;
                     const currentFile = filesUpload[i];
@@ -210,20 +211,20 @@ const SenseiUploadComponent = () => {
                 <FormUpload onSubmit={(e)=> handleSubmitValidationUpload(e)}>
                     <FormInfo>
                         <img src={uploadImage} alt="upload Image" />
-                        <UploadText>{ data[0]?.get("statusProof") === "pending" ? "Liste des fichiers importés" : "Importer les fichiers"}</UploadText>
+                        <UploadText>{ userDataProof?.get("statusProof") === "pending" ? "Liste des fichiers importés" : "Importer les fichiers"}</UploadText>
                     </FormInfo>
                     {filesUpload.map((file, index)=>(
                         <FilesUploaded key={index}>
                             <FileName>{file.name}</FileName>
-                            <img className={data[0]?.get("statusProof")!=="pending" ? data[0]?.get("statusProof")!=="validated" ? "" : "disabled" : "disabled"} src={imgCross} onClick={()=> handleClickDelete(index)} width="30" height="30" alt="fermeture" />
+                            <img className={userDataProof?.get("statusProof")!=="pending" ? userDataProof?.get("statusProof")!=="validated" ? "" : "disabled" : "disabled"} src={imgCross} onClick={()=> handleClickDelete(index)} width="30" height="30" alt="fermeture" />
                         </FilesUploaded>
                     ))}
                     <UploadActionsContainer>
                         <UploadButtons>
-                            <InputFile disabled={data[0]?.get("statusProof") === "pending" || data[0]?.get("statusProof") ==="validated"} type="file" id='customFile' onChange={(e) => handleUpload(e)} multiple/>
-                            <ValidationButton type="submit" className="sensei-btn big-btn" disabled={filesUpload.length === 0 || data[0]?.get("statusProof")==="pending" || data[0]?.get("statusProof") ==="validated"}>Valider</ValidationButton>
+                            <InputFile disabled={userDataProof?.get("statusProof") === "pending" || userDataProof?.get("statusProof") ==="validated"} type="file" id='customFile' onChange={(e) => handleUpload(e)} multiple/>
+                            <ValidationButton type="submit" className="sensei-btn big-btn" disabled={filesUpload.length === 0 || userDataProof?.get("statusProof")==="pending" || userDataProof?.get("statusProof") ==="validated"}>Valider</ValidationButton>
                         </UploadButtons>
-                        <TextInformation>{ data[0]?.get("statusProof") === "pending" ? "Les preuves sont en cours de traitement..." : data[0]?.get("statusProof") === "rejected" ? "Les preuves ne sont validés. Veuillez recommencer" : data[0]?.get("statusProof") === "validated" ? "Les preuves sont validés." : "" }</TextInformation>
+                        <TextInformation>{ userDataProof?.get("statusProof") === "pending" ? "Les preuves sont en cours de traitement..." : userDataProof?.get("statusProof") === "rejected" ? "Les preuves ne sont validés. Veuillez recommencer" : userDataProof?.get("statusProof") === "validated" ? "Les preuves sont validés." : "" }</TextInformation>
                     </UploadActionsContainer>    
                     <br />
                     

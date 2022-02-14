@@ -7,7 +7,8 @@ import { useState } from "react"
 import imgGaia from "../../../images/home-img/hero-img/GAIA.png"
 import imgOrion from "../../../images/home-img/hero-img/ORION.png"
 import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
-import { useMoralis } from "react-moralis"
+import { useMoralis, useMoralisQuery } from "react-moralis"
+import toast, { Toaster } from 'react-hot-toast';
 
 const HeroInscriptionContainer = styled.div`
     background: black;
@@ -102,6 +103,7 @@ const LabelInscription = styled.label`
 `
 const HeroInscription = () => {
     const {isAuthenticated, user, setUserData} = useMoralis();
+    const { data, error, isLoading } = useMoralisQuery("Guild");
     const email = useInput("");
     const telegram = useInput("");
     const twitter = useInput("");
@@ -119,25 +121,73 @@ const HeroInscription = () => {
         setGuild("pegasus")
     };
 
-    
+    const validateEmail = (str) => {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(str);
+    }
+
     const submit = (event) => {
         event.preventDefault();
         if(isAuthenticated){
             if(user){
-                setUserData({
-                    email: email.value,
-                    telegramUser: telegram.value,
-                    twitterUser: twitter.value,
-                    guildName: guild
-                  }).then(() =>{
-                    window.location = "/";
-                  });
+                try{
+                    if(!email.value || !telegram.value || !twitter.value || !guild){
+                        return;
+                    }
+                    if(validateEmail(email.value) === false){
+                        return;
+                    }
+                    user.set("email",email.value);
+                    user.set("telegramUser",telegram.value);
+                    user.set("twitterUser",twitter.value);
+                    user.set("guildName",guild);
+                    const savings = user.save().then(() => {
+                        const guildeChoisie = data.filter(elt => elt?.get("name") === guild)[0];
+                        guildeChoisie.set("memberSize", guildeChoisie.get("memberSize") + 1);
+                        guildeChoisie.save();
+                        setTimeout(()=> {
+                            window.location = "/";
+                        }, 2000);
+                    }).catch((raison)=>{
+                        console.log(raison);
+                    });
+                    /*
+                    const savings = setUserData({
+                        email: email.value,
+                        telegramUser: telegram.value,
+                        twitterUser: twitter.value,
+                        guildName: guild,
+                    }).then(() => {
+                        setTimeout(()=> {
+                            window.location = "/";
+                        },2000);
+                    }).catch((raison) => {
+                        console.log(raison);
+                    });
+                    */
+                    toast.promise(savings, {
+                        loading: 'Enregistrement en cours...',
+                        success: 'Le compte est bien enregistré',
+                        error: 'Erreur à l\'enregistrement.'
+                    },
+                    {
+                        style: {
+                            minWidth: '250px',
+                            background: '#333',
+                            color: '#fff',
+                        },
+                    });
+                    
+                }catch(e) {
+                      console.log(e);
+                }
             }
         }
     }
         
     return (
         <HeroInscriptionContainer>
+        <Toaster />
             <HeroInscriptionTitle>Inscrivez-vous</HeroInscriptionTitle>
             <HeroInscriptionSubtitle>Sélectionnez votre guilde, vivez l’aventure à plusieurs<br/> et remportez des cashprizes exceptionnels ! </HeroInscriptionSubtitle>
             <FormWrapper onSubmit={(e) => submit(e)}>

@@ -5,6 +5,8 @@ import { Link } from "gatsby"
 import imgGaia from "../../../images/home-img/hero-img/GAIA.png"
 import imgOrion from "../../../images/home-img/hero-img/ORION.png"
 import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
+import imgNone from "../../../images/home-img/hero-img/NONE.png"
+
 import rewards from "../../../images/profil-img/rewards.png"
 import profilEmpty from "../../../images/profil-img/profil-empty.png"
 import { useEffect } from "react"
@@ -134,7 +136,7 @@ const HeroProfil = () => {
                     </ProfilSocialLinks>
                 </HeroProfilPartLeft>
                 <HeroProfilPartRight>
-                    <img src={ user?.get("guildName") === "gaia" ? imgGaia : user?.get("guildName") === "orion" ? imgOrion : imgPegasus} alt="img-guild profil" width="300" height= "300"/>
+                    <img src={ user?.get("guildName") === "gaia" ? imgGaia : user?.get("guildName") === "orion" ? imgOrion : user?.get("guildName") === "pegasus" ? imgPegasus : imgNone} alt="img-guild profil" width="300" height= "300"/>
                     <HeroProfilGuildName>{user?.get("guildName")}</HeroProfilGuildName>
                     <ProfilTelegramLink href="/profil" target="_blank">Lien Telegram</ProfilTelegramLink>
                 </HeroProfilPartRight>
