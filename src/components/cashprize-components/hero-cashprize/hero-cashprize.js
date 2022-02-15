@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import { useERC20Balances, useNativeBalance } from "react-moralis"
+import { useEffect, useState } from "react"
 
 const HeroCashprizeContainer = styled.div`
     display: grid;
@@ -38,18 +39,26 @@ const HeroCashprize = () => {
     const options = { chain: '0x61', address: process.env.GATSBY_MORALIS_CASHPRIZE_ADDRESS};
     const { fetchERC20Balances, data } = useERC20Balances(options);
     const { getBalances, data: balance, nativeToken, error, isLoading } = useNativeBalance(options);
+    const [currentCashprizeSensei, setCurrentCashprizeSensei] = useState(0);
+    const [currentCashprizeBNB, setCurrentCashprizeBNB] = useState(0);
+    useEffect(()=> {
+        if(data !== null){
+            setCurrentCashprizeSensei(data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals));
+        }
 
+        if(balance && balance.balance){
+            setCurrentCashprizeBNB(balance?.formatted?.split(" ")[0])
+        }
+    }, [data, balance])
     return(
         <HeroCashprizeContainer>
             <CashprizeTitle>CASHPRIZE EN COURS</CashprizeTitle>
             <CashprizeContent>
                 <CashprizeInSensei>
-                    {!data && 0}
-                    { data && data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals)} $SENSEI
+                    {currentCashprizeSensei} $SENSEI
                 </CashprizeInSensei>
                 <CashprizeInBNB>
-                    {!balance && 0}
-                    {balance && balance?.formatted?.split(" ")[0]} $BNB
+                    {currentCashprizeBNB} $BNB
                 </CashprizeInBNB>
             </CashprizeContent>
         </HeroCashprizeContainer>
