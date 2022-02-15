@@ -67,15 +67,16 @@ const HeroObjectif = () => {
     const { data, error, isLoading } = useMoralisQuery("Cashprize", (query) =>
     query
     .equalTo("status", "created")
-  );
-  const { data: dataguild } = useMoralisQuery("Guild");
+    );
+    const { data: dataguild } = useMoralisQuery("Guild");
+    const objectif = data[0];
     return(
         <CashprizeObjectifContainer>
             
             <CashprizeContent>
                 <CashprizeObjectifTitle>OBJECTIF EN COURS :</CashprizeObjectifTitle>
                 <CashprizeObjectifNumber> 
-                {data && data.map((item, index) => (<div>{item.get("objectif")} MC</div>))}
+                {objectif && objectif.get("objectif")} MC
                 </CashprizeObjectifNumber>
             </CashprizeContent>
             <CashprizeGuild>

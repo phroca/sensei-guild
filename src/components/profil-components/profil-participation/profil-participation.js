@@ -31,7 +31,7 @@ const ProfilParticipation = () => {
                     return eltId === user.id && statusProofValidated;
                 });
                 const numberRaidOfCashprize = dataRaid.filter(elt => {
-                    const cashprizeId = elt?.get("cashprize").id;
+                    const cashprizeId = elt?.get("cashprize")?.id;
                     return cashprizeId === dataCashprize[0]?.id;
                 });
 

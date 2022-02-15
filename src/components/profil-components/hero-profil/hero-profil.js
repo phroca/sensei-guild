@@ -9,8 +9,10 @@ import imgNone from "../../../images/home-img/hero-img/NONE.png"
 
 import rewards from "../../../images/profil-img/rewards.png"
 import profilEmpty from "../../../images/profil-img/profil-empty.png"
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useERC20Balances, useMoralis, useNativeBalance, useMoralisWeb3ApiCall, useMoralisWeb3Api, useTokenPrice } from "react-moralis"
+import toast, { Toaster } from 'react-hot-toast';
+
 const HeroProfilContainer = styled.div`
         display: grid;
         grid-template-rows: 450px 1fr;
@@ -35,6 +37,9 @@ const ProfilImage = styled.img`
     border-radius: 50%;
     border: 5px solid #FD720E;
     z-index: 1;
+    &:hover{
+        cursor: pointer;
+    }
 `
 const ProfilSocialLinks = styled.div`
     position: absolute;
@@ -102,38 +107,70 @@ const HeroProfilTotalRecompenseValueTitle = styled.h1`
     color: white;
     font-size: 64px;
 `
-
+const InputProfil = styled.input`
+display: none;`
 
 const HeroProfil = () => {
     const options = { chain: '0x61', address: '0xbfe92F7AF15441eBB41aC49902Bf1C073EA05285'};
     const {isAuthenticated, user, Moralis} = useMoralis();
     const { fetchERC20Balances, data } = useERC20Balances(options);
     const { getBalances, data: balance, nativeToken, error, isLoading } = useNativeBalance(options);
+    const wrapperRef = useRef(null);
+    const [currentProfile, setCurrentProfile] = useState();
     //const Web3Api = useMoralisWeb3Api();
     
     //const { fetch, data: tokenBalances, error, isLoading } = useMoralisWeb3ApiCall(Web3Api.account.getTokenBalances, options);
     //const balances = Web3Api.account.getTokenBalances(options);
     //const test = Web3Api.token.getTokenPrice(options);
       
-      useEffect(()=> {
+    useEffect(()=> {
         if(!data) {
             //fetchERC20Balances({ params: options });
         }
         if(!balance){
             ///fetchTokenPrice({ params: options });
         }
-      });
+        if(isAuthenticated){
+            setCurrentProfile(user?.get("userProfile") ? user?.get("userProfile").url() : profilEmpty);
+        }
+    }, [user]);
+
+    const handleUploadImage = (e) => {
+        const target = e.target;
+        const files = target.files;
+        if(files.length === 1){
+            const fileToSave = new Moralis.File(files[0].name, files[0]);
+            user.set("userProfile", fileToSave);
+            const savingProfile = user.save().then((user)=>{
+                setCurrentProfile(user?.get("userProfile").url());
+            })
+            toast.promise(savingProfile, {
+                loading: 'Mise à jour de la photo de profil...',
+                success: 'La photo de profil a été mis a jour !',
+                error: 'Erreur à l\'enregistrement.'
+            },
+            {
+                style: {
+                    minWidth: '250px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
+        }
+    }
 
     return (
         <HeroProfilContainer>
+        <Toaster />
             <HeroProfilInfos>
                 <HeroProfilPartLeft>
-                    <ProfilImage src={isAuthenticated && user?.get("userProfile") ? user?.get("userProfile").url() : profilEmpty} width="300" height="300" />
+                    <ProfilImage src={currentProfile} width="300" height="300" onClick={()=> {wrapperRef.current.click();}}/>
                     <ProfilSocialLinks>
                         <SocialLink>Telegram : @{isAuthenticated && user?.get("telegramUser")}</SocialLink>
                         <SocialLink>Twitter : @{isAuthenticated && user?.get("twitterUser")}</SocialLink>
                         <SocialLink>@Discord - SOON</SocialLink>
                     </ProfilSocialLinks>
+                    <InputProfil ref={wrapperRef} type="file" id='profilupload' onChange={(e) => handleUploadImage(e)} accept="image/jpeg, image/png"/>
                 </HeroProfilPartLeft>
                 <HeroProfilPartRight>
                     <img src={ user?.get("guildName") === "gaia" ? imgGaia : user?.get("guildName") === "orion" ? imgOrion : user?.get("guildName") === "pegasus" ? imgPegasus : imgNone} alt="img-guild profil" width="300" height= "300"/>
