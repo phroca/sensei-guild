@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
-
+import { useState, useEffect } from "react"
 import imgGaia from "../../../images/home-img/hero-img/GAIA.png"
 import imgOrion from "../../../images/home-img/hero-img/ORION.png"
 import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
@@ -30,19 +30,31 @@ const TextMembre = styled.h1`
 `
 const HeroMember = () => {
     const { data, error, isLoading } = useMoralisQuery("Guild");
+    const [gaiaMember, setGaiaMember] = useState(0);
+    const [orionMember, setOrionMember] = useState(0);
+    const [pegasusMember, setPegasusMember] = useState(0);
+
+    useEffect(() => {
+        if(data){
+            setGaiaMember(data.filter(item => item.get("name") === "gaia")[0]?.get("memberSize"));
+            setOrionMember(data.filter(item => item.get("name") === "orion")[0]?.get("memberSize"));
+            setPegasusMember(data.filter(item => item.get("name") === "pegasus")[0]?.get("memberSize"));
+        }
+    }, [data]);
+
     return(
         <MembresGuildes>
                 <SectionMembre>
                     <img className="img-gaia" src={imgGaia} width="260" height="260" alt="gaia" />
-                    <TextMembre>{data && data.filter(item => item.get("name") === "gaia")[0]?.get("memberSize")} Membres</TextMembre>
+                    <TextMembre>{data && gaiaMember} Membres</TextMembre>
                 </SectionMembre>
                 <SectionMembre>
                     <img className="img-orion" src={imgOrion} width="260" height="260" alt="orion" />
-                    <TextMembre>{data && data.filter(item => item.get("name") === "orion")[0]?.get("memberSize")} Membres</TextMembre>
+                    <TextMembre>{data && orionMember} Membres</TextMembre>
                 </SectionMembre>
                 <SectionMembre>
                     <img className="img-pegasus" src={imgPegasus} width="260" height="260" alt="pegasus" />
-                    <TextMembre>{data && data.filter(item => item.get("name") === "pegasus")[0]?.get("memberSize")} Membres</TextMembre>
+                    <TextMembre>{data && pegasusMember} Membres</TextMembre>
                 </SectionMembre> 
         </MembresGuildes>
     )
