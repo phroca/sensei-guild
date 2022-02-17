@@ -35,7 +35,8 @@ const ProfilParticipation = () => {
                     return cashprizeId === dataCashprize[0]?.id;
                 });
 
-                setTauxParticipation((numberProofsOfUser.length / numberRaidOfCashprize.length) * 100);
+                const lengthProof = numberRaidOfCashprize.length !== 0 ? numberProofsOfUser.length / numberRaidOfCashprize.length : 0;
+                setTauxParticipation((lengthProof) * 100);
             }
         }
         
