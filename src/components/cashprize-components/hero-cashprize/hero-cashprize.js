@@ -44,10 +44,14 @@ const HeroCashprize = () => {
     useEffect(()=> {
         if(data !== null){
             setCurrentCashprizeSensei(data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals));
+        } else {
+            fetchERC20Balances(options);
         }
 
         if(balance && balance.balance){
             setCurrentCashprizeBNB(balance?.formatted?.split(" ")[0])
+        } else {
+            getBalances(options);
         }
     }, [data, balance])
     return(

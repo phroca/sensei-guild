@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import "./cashprize.css"
 import { useERC20Balances } from "react-moralis";
+import { useState, useEffect } from "react";
 
-const options = { chain: '0x61', address: process.env.GATSBY_MORALIS_CASHPRIZE_ADDRESS};
 
 const CashPrizeContainer = styled.div`
     height: 750px;
@@ -23,13 +23,23 @@ const CashPrizeNumber = styled.h1`
 `
 
 const CashPrize = () => {
-    const { data } = useERC20Balances(options); 
-    
+    const options = { chain: '0x61', address: process.env.GATSBY_MORALIS_CASHPRIZE_ADDRESS};
+    const { data, fetchERC20Balances } = useERC20Balances(options); 
+    const [cashprize, setCashprize] = useState(0);
+
+    useEffect(() => {
+        if(data){
+            setCashprize(data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals));
+        } else {
+            fetchERC20Balances(options);
+        }
+    }, [data]);
+
     return (
         <CashPrizeContainer className="bg-gradient-animated">
             <CashPrizeNumber>
                 {!data && 0}
-                { data && data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals)} $SENSEI
+                { data && cashprize} $SENSEI
             </CashPrizeNumber>
             <Link to="/cashprize"><button className="sensei-btn big-btn">Cashprize</button></Link>
         </CashPrizeContainer>
