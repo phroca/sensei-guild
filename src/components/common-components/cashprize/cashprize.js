@@ -32,7 +32,7 @@ const CashPrize = () => {
         } else {
             fetchERC20Balances(options);
         }
-    });//, [data]);
+    });
 
     return (
         <CashPrizeContainer className="bg-gradient-animated">
