@@ -233,8 +233,8 @@ const HeroVictoiresScores = () => {
                         <VictoireSpan>% de gain</VictoireSpan>
                         <VictoireSpan>Date</VictoireSpan>
                     </VictoireLine>
-                {data && data?.map((item, index) => {
-                
+                {data && data.length > 0 && data?.map((item, index) => {
+                    
                     const rewardDate = new Date(item?.get("rewardDate"));
                     return(
                         <VictoireLine key={index} bgColor={item?.get("guild")}>

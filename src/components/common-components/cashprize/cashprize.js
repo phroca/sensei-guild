@@ -5,7 +5,6 @@ import "./cashprize.css"
 import { useERC20Balances } from "react-moralis";
 import { useState, useEffect } from "react";
 
-
 const CashPrizeContainer = styled.div`
     height: 750px;
     display: grid;
