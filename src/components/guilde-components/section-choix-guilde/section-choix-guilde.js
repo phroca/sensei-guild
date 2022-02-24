@@ -60,20 +60,20 @@ const SectionChoixGuilde = () => {
                         c'est elle qui provoque la rébellion
                         Elle est aussi la première divinité qui pouvait prédire l'avenir.
                     </div>
-                    <SenseiLink to="/inscription" className="sensei-btn big-btn">enter GAIA</SenseiLink>
+                    <SenseiLink to="/inscription" className="sensei-btn big-btn">GUILDE GAIA</SenseiLink>
                 </GuildeSection>
                 <GuildeSection>
-                    <img className="img-orion" src={imgOrion} alt="orion" width="250"/>
+                <img className="img-pegasus" src={imgPegasus} alt="pegasus" width="250"/>
                     <div className="subtext">
                         Le mythe de Pégase est issu des dieux lyciens et assyriens. 
                         C'est un Symbole de sagesse avec une profonde symbolique en 
                         relation avec l'énergie spirituelle qui permet d'accéder au 
                         domaine des dieux, le mont Olympe, lui est attachée.
                     </div>
-                    <SenseiLink to="/inscription" className="sensei-btn big-btn">enter ORION</SenseiLink>
+                    <SenseiLink to="/inscription" className="sensei-btn big-btn">GUILDE PEGASUS</SenseiLink>
                 </GuildeSection>
                 <GuildeSection>
-                     <img className="img-pegasus" src={imgPegasus} alt="pegasus" width="250"/>
+                    <img className="img-orion" src={imgOrion} alt="orion" width="250"/>
                     <div className="subtext">
                         La constellation d'Orion est une des 
                         plus belles constellations du ciel.
@@ -81,7 +81,7 @@ const SectionChoixGuilde = () => {
                         600 fois plus grosse que le Soleil et 
                         qui règne dans le ciel de l'univers. 
                     </div>
-                    <SenseiLink to="/inscription" className="sensei-btn big-btn">enter PEGASUS</SenseiLink>
+                    <SenseiLink to="/inscription" className="sensei-btn big-btn">GUILDE ORION</SenseiLink>
                 </GuildeSection>
             </ChoixGuildeListe>
         </ChoixGuildeContainer>
