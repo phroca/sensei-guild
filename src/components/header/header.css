@@ -35,15 +35,20 @@
 
 .nav-group {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-items: center;
     justify-self: end;
     grid-gap: 5px;
+    max-width: 375px;
 }
 
 .nav-group button {
     cursor: pointer;
+}
+
+.nav-group a {
+    display: grid;
 }
 
 a.header-button button {
@@ -65,4 +70,20 @@ a.header-button button {
     font-family: "AirbnbCerealBlack";
     color: black;
     border-radius: 100%;
+}
+
+@media (max-width: 640px) {
+    .header {
+        padding: 15px 0;
+    }
+    .nav-group {
+        max-width: 100%;
+    }
+    .header-group {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    .header-group span {
+        display: none;
+    }
 }

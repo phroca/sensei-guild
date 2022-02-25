@@ -7,7 +7,7 @@ import { connectors } from "../../utils/config-connectors";
 import { useState } from "react";
 
 const BtnToAuthenticate = styled.button`
-outline: none;
+    outline: none;
     border: 2px solid #0AA4F3;
     width: 178px;
     height: 50px;
@@ -17,6 +17,11 @@ outline: none;
     border-radius: 8px;
     text-transform: uppercase;
     cursor: pointer;
+    @media (max-width: 640px) {
+        width: 120px;
+        height: 40px;
+        font-size: 10px;
+    }
 `
 
 const ConnectorContainer = styled.div`

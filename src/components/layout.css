@@ -80,3 +80,11 @@ button.sensei-btn {
     height: 100%;
     object-fit: cover;
 }
+
+@media (max-width: 640px) {
+    button.sensei-btn {
+        width: 120px;
+        height: 40px;
+        font-size: 10px;
+    }
+}
