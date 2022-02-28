@@ -15,6 +15,9 @@ const ChoixGuildeContainer = styled.div`
         grid-gap: 50px;
         justify-items: center;
         padding: 50px 150px;
+        @media (max-width: 640px) {
+            padding: 50px;
+        }
     `
     const ChoixGuildeTitle = styled.h1`
         font-family: "AirbnbCerealBlack";
@@ -23,6 +26,9 @@ const ChoixGuildeContainer = styled.div`
         text-align: center;
         align-self: start;
         margin: 0;
+        @media (max-width: 640px) {
+            font-size: 30px;
+        }
     `
     const ChoixGuildeListe = styled.div`
         display: grid;
@@ -30,6 +36,9 @@ const ChoixGuildeContainer = styled.div`
         grid-gap: 50px;
         align-items: center;
         justify-items: center;
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+        }
     `
     const GuildeSection = styled.div`
         display: grid;
@@ -40,6 +49,11 @@ const ChoixGuildeContainer = styled.div`
         .subtext {
             color: white;
             text-align: center;
+        }
+        @media (max-width: 640px) {
+            img{
+                width: 140px;
+            }
         }
     `
 

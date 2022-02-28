@@ -43,6 +43,51 @@
     }
 }
 
+@media (max-width: 640px) {
+    @keyframes animateGaia {
+        0% {
+            transform: translateY(0px) translateX(0px);
+        }
+        33% {
+            transform: translateY(70px) translateX(70px);
+        }
+        67% {
+            transform: translateY(70px) translateX(-70px);
+        }
+        100% {
+            transform: translateY(0px) translateX(0px);
+        }
+    }
+    @keyframes animateOrion {
+        0% {
+            transform: translateY(0px) translateX(0px);
+        }
+        33% {
+            transform: translateY(-70px) translateX(70px);
+        }
+        67% {
+            transform: translateX(145px);
+        }
+        100% {
+            transform: translateY(0px) translateX(0px);
+        }
+    }
+    @keyframes animatePegasus {
+        0% {
+            transform: translateY(0px) translateX(0px);
+        }
+        33% {
+            transform: translateX(-145px);
+        }
+        67% {
+            transform: translateY(-70px) translateX(-70px);
+        }
+        100% {
+            transform: translateY(0px) translateX(0px);
+        }
+    }
+}
+
 .hero--img-gaia {
     animation: animateGaia;
     animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);

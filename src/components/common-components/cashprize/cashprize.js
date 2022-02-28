@@ -12,6 +12,11 @@ const CashPrizeContainer = styled.div`
     padding: 150px 150px 100px;
     justify-items: center;
     align-content: center;
+    @media (max-width: 640px) {
+            height: 250px;
+            padding: 100px 50px 100px;
+
+    }
 `
 
 const CashPrizeNumber = styled.h1`
@@ -19,6 +24,9 @@ const CashPrizeNumber = styled.h1`
     color: white;
     font-size: 50px;
     text-align: center;
+    @media (max-width: 640px) {
+            font-size: 30px;
+    }
 `
 
 const CashPrize = () => {

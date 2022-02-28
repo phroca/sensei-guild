@@ -17,6 +17,11 @@ const FooterContainer =styled.div`
     align-items: center;
     justify-items: center;
     padding: 100px 300px;
+    @media (max-width: 640px) {
+        padding: 100px;
+        height: 100%;
+        grid-template-rows: repeat(3, auto);
+    }
 `
 const FooterTop = styled.div`
     display: grid;
@@ -24,6 +29,10 @@ const FooterTop = styled.div`
     grid-gap: 50px;
     align-items: center;
     justify-items: center;
+    @media (max-width: 640px) {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+    }
 `
 
 
@@ -58,6 +67,7 @@ const FooterColumnListLinkPages = styled.div`
         text-decoration: none;
         text-align: left;
     }
+    
 `
 const FooterColumnListLinkCommunity = styled.div`
     display: grid;

@@ -15,6 +15,11 @@ const HeroGuildeContainer = styled.div`
         padding: 150px 150px 100px;
         justify-items: center;
         align-items: center; 
+        @media (max-width: 640px) {
+            padding: 100px 50px 100px;
+            grid-template-columns: 1fr;
+            grid-template-rows: 200px auto;
+        }
     `
 const HeroGuildePartLeft = styled.div`
     display: grid;
@@ -22,12 +27,20 @@ const HeroGuildePartLeft = styled.div`
     justify-items: left;
     align-items: center; 
 
+    @media (max-width: 640px) {
+        grid-template-rows: 150px 100px 90px;
+    }
+
 `
 const HeroTitle = styled.h1`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 50px;
     text-align: left;
+    @media (max-width: 640px) {
+            font-size: 30px;
+    }
+
 `
 const HeroSubtitle = styled.p`
     color: white;
@@ -37,17 +50,29 @@ const HeroGuildePartRight = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    @media (max-width: 640px) {
+        grid-row-start: 1;
+    }
     .hero--img-gaia{
         grid-column-start: 2;
         grid-row-start: 1;
+        @media (max-width: 640px) {
+            height: 70px;
+        }
     }
     .hero--img-orion{
         grid-column-start: 1;
         grid-row-start: 2;
+        @media (max-width: 640px) {
+            height: 70px;
+        }
     }
     .hero--img-pegasus{
         grid-column-start: 3;
         grid-row-start: 2;
+        @media (max-width: 640px) {
+            height: 70px;
+        }
     }
 `
 const HeroGuilde = () => {
