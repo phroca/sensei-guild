@@ -87,4 +87,9 @@ button.sensei-btn {
         height: 40px;
         font-size: 10px;
     }
+    .big-btn {
+        width: 200px !important;
+        height: 50px !important;
+        font-size: 14px !important;
+    }
 }

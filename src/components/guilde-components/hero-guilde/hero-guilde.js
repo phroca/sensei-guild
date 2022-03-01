@@ -28,7 +28,7 @@ const HeroGuildePartLeft = styled.div`
     align-items: center; 
 
     @media (max-width: 640px) {
-        grid-template-rows: 150px 100px 90px;
+        grid-template-rows: auto;
     }
 
 `

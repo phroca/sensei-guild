@@ -13,6 +13,9 @@ import toast, { Toaster } from 'react-hot-toast';
 const HeroInscriptionContainer = styled.div`
     background: black;
     padding: 150px 450px 100px;
+    @media (max-width: 640px) {
+            padding: 100px 50px 100px;
+    }
     &.bg-gaia {
         background: #272727;
     }
@@ -34,6 +37,9 @@ const HeroInscriptionTitle = styled.h1`
     color: white;
     font-size: 50px;
     text-align: center;
+    @media (max-width: 640px) {
+            font-size: 30px;
+    }
 `
 
 const HeroInscriptionSubtitle = styled.h2`
@@ -41,6 +47,9 @@ const HeroInscriptionSubtitle = styled.h2`
     color: white;
     font-size: 24px;
     text-align: center;
+    @media (max-width: 640px) {
+            font-size: 14px;
+    }
 `
 const FormWrapper = styled.form`
     display: grid;
@@ -48,11 +57,19 @@ const FormWrapper = styled.form`
     align-items: center;
     grid-gap: 20px;
     padding-bottom: 50px;
+    @media (max-width: 640px) {
+        grid-template-rows: repeat(5,auto);
+        justify-items: start;
+        ²button {
+            justify-self: start;
+        }
+    }
 `;
 
 const InputWrapper = styled.div`
     display: grid;
     grid-template-rows: auto;
+    
 `
     
 const LabelInput = styled.label`
@@ -74,12 +91,22 @@ const InscriptionInput = styled.input`
         outline: none;
     }
 
+    @media (max-width: 640px) {
+        grid-template-columns: auto;
+        justify-self: center;
+        width: 100%;
+    }
 `
 const HeroInscriptionPseudosSocial = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     grid-gap: 20px;
+    @media (max-width: 640px) {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, auto);
+        justify-self: center;
+    }
 `
 
 const HeroInscriptionGuildeChoice = styled.div`
@@ -87,6 +114,11 @@ const HeroInscriptionGuildeChoice = styled.div`
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     grid-gap: 20px;
+    @media (max-width: 640px) {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+        justify-self: center;
+    }
 `
 
 const SectionChoix = styled.div`
@@ -94,6 +126,9 @@ const SectionChoix = styled.div`
     grid-template-columns: 110px 20px auto;
     justify-content: center;
     align-items: center;
+    @media (max-width: 640px) {
+        justify-content: start;
+    }
 
 `
 
