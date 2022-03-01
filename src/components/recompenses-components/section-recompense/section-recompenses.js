@@ -14,6 +14,9 @@ const SectionRecompensesContainer = styled.div`
     justify-content: center;
     justify-items: center;
     grid-gap: 50px;
+    @media (max-width: 640px) {
+            padding: 100px 50px 100px;
+    }
     
 `
 const RecompenseMembresGuildes = styled.div`
@@ -23,6 +26,9 @@ const RecompenseMembresGuildes = styled.div`
     grid-gap: 20px;
     max-width: 1000px;
     padding-bottom: 50px;
+    @media (max-width: 640px) {
+        max-width: 100%;
+    }
 `;
 
 const SectionMembre = styled.div`
@@ -32,6 +38,13 @@ const SectionMembre = styled.div`
     justify-content: center;
     justify-items: center;
     grid-gap: 5px;
+    @media (max-width: 640px) {
+        grid-template-rows: 80px 50px;
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
 `
 
 const RecompensesTitle = styled.h1`
@@ -39,6 +52,10 @@ const RecompensesTitle = styled.h1`
     color: white;
     font-size: 40px;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+            font-size: 26px;
+    }
+
 `
 
 const RecompensesText = styled.div`
@@ -49,6 +66,11 @@ const RecompensesText = styled.div`
     grid-gap: 100px;
     justify-items: start;
     padding-bottom: 50px;
+    @media (max-width: 640px) {
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
 `
 
 const RecompensePart = styled.div`
@@ -57,23 +79,35 @@ const RecompensePart = styled.div`
     align-items: center;
     justify-content: center;
     grid-gap: 20px;
+    @media (max-width: 640px) {
+        grid-template-rows: repeat(2, auto);
+    }
 `
 const RecompensesSubtitle = styled.h1`
     font-family: "AirbnbCerealMedium";
     color: white;
     font-size: 22px;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+            font-size: 12px;
+    }
 `
 const RecompensesParagraph = styled.p`
     font-family: "AirbnbCerealMedium";
     color: white;
     font-size: 18px;
+    @media (max-width: 640px) {
+            font-size: 10px;
+    }
 `
 const TextMembre = styled.h1`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 24px;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+        font-size: 12px;
+    }
 `
 
 const SectionRecompenseImg = styled.div`
@@ -83,14 +117,26 @@ const SectionRecompenseImg = styled.div`
     .hero--img-gaia{
         grid-column-start: 2;
         grid-row-start: 1;
+        @media (max-width: 640px) {
+            width: 70px;
+            height: 70px;
+        }
     }
     .hero--img-orion{
         grid-column-start: 1;
         grid-row-start: 2;
+        @media (max-width: 640px) {
+            width: 70px;
+            height: 70px;
+        }
     }
     .hero--img-pegasus{
         grid-column-start: 3;
         grid-row-start: 2;
+        @media (max-width: 640px) {
+            width: 70px;
+            height: 70px;
+        }
     }
 `
 const SectionRecompenses = () => {
