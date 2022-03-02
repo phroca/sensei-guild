@@ -59,10 +59,8 @@ const FormWrapper = styled.form`
     padding-bottom: 50px;
     @media (max-width: 640px) {
         grid-template-rows: repeat(5,auto);
-        justify-items: start;
-        ²button {
-            justify-self: start;
-        }
+        justify-items: center;
+
     }
 `;
 
