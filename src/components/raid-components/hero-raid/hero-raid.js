@@ -11,6 +11,11 @@ const HeroRaidContainer = styled.div`
     align-items: center; 
     grid-gap: 150px;
     padding: 50px 0;
+    @media (max-width: 640px) {
+        grid-template-columns:  1fr;
+        grid-template-rows: 200px auto;
+        grid-gap: 0px;
+    }
 `
 
 const HeroRaidPartLeft = styled.div`
@@ -18,20 +23,37 @@ const HeroRaidPartLeft = styled.div`
     grid-template-rows: 320px 1fr;
     justify-items: left;
     align-items: center; 
+    @media (max-width: 640px) {
+        grid-template-rows: 100px 1fr;
+        justify-items: center;
+    }
 `
 const HeroTitle = styled.h1`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 50px;
     text-align: left;
+    @media (max-width: 640px) {
+        text-align: center;
+        font-size: 34px;
+    }
 `
-const HeroSubtitle = styled.p`
+const HeroSubtitle = styled.div`
     color: white;
     text-align: left;
 `
 const HeroRaidPartRight = styled.div`
     display: grid;
     grid-template-columns: 1fr;
+    img {
+            height: 100%;
+        }
+    @media (max-width: 640px) {
+        grid-row-start: 1;
+        img {
+            height: 200px;
+        }
+    }
 `
 
 const HeroRaid = ({propRaid}) => {
@@ -50,7 +72,7 @@ const HeroRaid = ({propRaid}) => {
                     MISSION DU JOUR :<br />
                     CIBLE : {cible}<br />
                     {link}<br />
-                    <p dangerouslySetInnerHTML={{__html: ruleParagraph}}></p>
+                    <div dangerouslySetInnerHTML={{__html: ruleParagraph}}></div>
                 </HeroSubtitle>
             </HeroRaidPartLeft>
             <HeroRaidPartRight>
