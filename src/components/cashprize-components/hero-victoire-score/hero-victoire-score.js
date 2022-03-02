@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import "./hero-victoire-score.css";
+
 // import required modules
 import { Navigation } from "swiper";
 
@@ -16,12 +18,20 @@ const SectionContainer = styled.div`
     grid-template-rows: 300px 1fr 1fr;
     grid-gap: 50px;
     padding: 100px 0;
+    @media (max-width: 640px) {
+        padding: 20px 0;
+        grid-template-rows: 150px auto 450px;
+    }
 `
 const SectionTitle = styled.h2`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 50px;
     text-align: left;
+    @media (max-width: 640px) {
+            font-size: 30px;
+            text-align: center;
+    }
 `
 
 /** Victoire container */
@@ -30,6 +40,9 @@ const VictoiresContainer = styled.div`
     grid-template-rows: 130px 1fr;
     grid-gap: 20px;
     padding: 0 50px;
+    @media (max-width: 640px) {
+        padding: 0px;
+    }
 `
 
 const HeadCashprize = styled.div`
@@ -61,6 +74,19 @@ const Text = styled.h3`
     &.text--center{
         text-align: center;
     }
+    @media (max-width: 640px) {
+        font-size: 36px;
+        &.text--right{
+            font-size: 10px;
+        }
+        &.text--left{
+            font-size: 10px;
+        }
+        &.text--center{
+            font-size: 10px;
+        }
+            
+    }
 `
 const VictoiresList = styled.div`
     display: grid;
@@ -76,6 +102,11 @@ const ScoresContainer = styled.div`
     padding: 0 50px;
     height: 850px;
     width: 100%;
+    @media (max-width: 640px) {
+        height: 300px;
+        width: 100%;
+    }
+
 `
 
 const ScoresCardList = styled.div`
@@ -89,12 +120,21 @@ const ScoreCard = styled.div`
     background: ${props => props.bgMemberColor === "gaia" ? "linear-gradient(45deg, #2959FF, #3EA7EB)" : props.bgMemberColor === "pegasus" ? "linear-gradient(45deg, #7E9BFF, #4A1AE4)" : props.bgMemberColor === "orion" ? "linear-gradient(45deg, #FF4D28, #BC0000)" : "transparent"};
     border-radius: 60px;
     height: 660px;
+    @media (max-width: 640px) {
+        grid-template-rows: 50px auto;
+        height: 300px;
+        width: 100%;
+    }
 `
 
 const CardHead = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    @media (max-width: 640px) {   
+        align-items: center;
+        margin: 30px 5px 0 5px;
+    }
 `
 const CardTextName = styled.h3`
     font-family: "AirbnbCerealBlack";
@@ -102,6 +142,9 @@ const CardTextName = styled.h3`
     font-size: 48px;
     grid-column-start: 2;
     text-align: center;
+    @media (max-width: 640px) {
+        font-size: 12px;
+    }
 `
 const CardTextMember = styled.h3`
     font-family: "AirbnbCerealBlack";
@@ -109,6 +152,9 @@ const CardTextMember = styled.h3`
     font-size: 48px;
     grid-column-start: 3;
     text-align: center;
+    @media (max-width: 640px) {
+        font-size: 8px;
+    }
 `
 
 const CardParticipantList = styled.div`
@@ -122,12 +168,18 @@ const ScoreInvitNumber = styled.h4`
     color: white;
     font-size: 36px;
     text-align: left;
+    @media (max-width: 640px) {
+        font-size: 20px;
+    }
 `
 const ScoreParticipationNumber = styled.h4`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 36px;
     text-align: right;
+    @media (max-width: 640px) {
+        font-size: 20px;
+    }
 `
 
 const VictoireLine = styled.div`
@@ -144,12 +196,19 @@ const VictoireSpan = styled.div`
     color: white;
     font-size: 36px;
     text-transform: uppercase;
+    text-align: center;
+    @media (max-width: 640px) {
+        font-size: 12px;
+    }
 `
 
 const ScoreList = styled.div`
     display: grid;
     grid-template-rows: repeat(5, 85px);
     grid-gap: 5px;
+    @media (max-width: 640px) {
+        grid-template-rows: repeat(5, 35px);
+    }
 `
 
 const ScoreLine = styled.div`
@@ -164,6 +223,9 @@ const ScoreSpan = styled.div`
     color: white;
     font-size: 30px;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+        font-size: 14px;
+    }
 `
 
 const HeroVictoiresScores = () => {
@@ -248,7 +310,6 @@ const HeroVictoiresScores = () => {
                 })}
                 </VictoiresList>
             </VictoiresContainer>
-            
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                     <SwiperSlide>
                         <ScoresContainer>
@@ -259,6 +320,7 @@ const HeroVictoiresScores = () => {
                                 </Head>
                                 <ScoreCard bgMemberColor="gaia">
                                     <CardHead>
+                                        <Text className="text--center">Classement</Text>
                                         <CardTextName>GAIA</CardTextName>  
                                         <CardTextMember>{gaiaMember} MEMBRES</CardTextMember>
                                     </CardHead>
@@ -297,6 +359,7 @@ const HeroVictoiresScores = () => {
                                 </Head>
                                 <ScoreCard bgMemberColor="orion">
                                     <CardHead >
+                                        <Text className="text--center">Classement</Text>
                                         <CardTextName>ORION</CardTextName>  
                                         <CardTextMember>{orionMember} MEMBRES</CardTextMember>
                                     </CardHead>
@@ -335,7 +398,7 @@ const HeroVictoiresScores = () => {
                                 </Head>
                                 <ScoreCard bgMemberColor="pegasus">
                                     <CardHead>
-                                    <Text>Classement</Text>
+                                        <Text className="text--center">Classement</Text>
                                         <CardTextName>PEGASUS</CardTextName>  
                                         <CardTextMember>{pegasusMember} MEMBRES</CardTextMember>
                                     </CardHead>
@@ -366,7 +429,6 @@ const HeroVictoiresScores = () => {
                         </ScoresContainer>
                     </SwiperSlide>
                 </Swiper>  
-            
         </SectionContainer>
     )
 }

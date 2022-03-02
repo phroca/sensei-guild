@@ -11,6 +11,10 @@ const CashprizeObjectifContainer = styled.div`
     grid-template-rows: 1fr 400px;
     grid-gap: 50px;
     padding: 100px 0;
+    @media (max-width: 640px) {
+        grid-template-rows: auto;
+    }
+
 `
 
 const CashprizeGuild = styled.div`
@@ -24,6 +28,9 @@ const Text = styled.div`
     color: white;
     font-size: 144px;
     text-align: center;
+    @media (max-width: 640px) {
+        font-size: 40px;
+    }
 `
 
 const CashprizeContent = styled.div`
@@ -38,12 +45,18 @@ const CashprizeObjectifTitle = styled.div`
     color: white;
     font-size: 100px;
     text-align: center;
+    @media (max-width: 640px) {
+        font-size: 1.7em;
+    }
 `
 const CashprizeObjectifNumber = styled.div`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 144px;
     text-align: center;
+    @media (max-width: 640px) {
+        font-size: 40px;
+    }
 `
 
 const SectionMembre = styled.div`
@@ -53,6 +66,13 @@ const SectionMembre = styled.div`
     justify-content: center;
     justify-items: center;
     grid-gap: 5px;
+    @media (max-width: 640px) {
+        grid-template-rows: 80px 50px 50px;
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
 `
 
 const TextMembre = styled.h1`
@@ -60,6 +80,10 @@ const TextMembre = styled.h1`
     color: white;
     font-size: 24px;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+        font-size: 12px;
+        text-align: center;
+    }
 `
 
 const HeroObjectif = () => {

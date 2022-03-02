@@ -9,12 +9,19 @@ const HeroCashprizeContainer = styled.div`
     grid-gap: 30px;
     max-height: 550px;
     padding: 50px 0 100px;
+    @media (max-width: 640px) {
+        grid-template-rows: auto;
+        max-height: 250px;
+    }
 `
 const CashprizeTitle = styled.div`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 80px;
     text-align: center;
+    @media (max-width: 640px) {
+        font-size: 34px;
+    }
 `
 const CashprizeContent = styled.div`
     display: grid;
@@ -27,12 +34,18 @@ const CashprizeInSensei = styled.div`
     color: white;
     font-size: 100px;
     text-align: center;
+    @media (max-width: 640px) {
+            font-size: 36px;
+    }
 `
 const CashprizeInBNB = styled.div`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 100px;
     text-align: center;
+    @media (max-width: 640px) {
+            font-size: 36px;
+    }
 `
 
 const HeroCashprize = () => {

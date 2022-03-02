@@ -20,6 +20,13 @@ const SectionMembre = styled.div`
     justify-content: center;
     justify-items: center;
     grid-gap: 5px;
+    @media (max-width: 640px) {
+        grid-template-rows: 80px 50px;
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
 `
 
 const TextMembre = styled.h1`
@@ -27,6 +34,9 @@ const TextMembre = styled.h1`
     color: white;
     font-size: 24px;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+        font-size: 12px;
+    }
 `
 const HeroMember = () => {
     const { data, error, isLoading } = useMoralisQuery("Guild");

@@ -151,7 +151,7 @@ const Footer = () => {
             </FooterTop>
             <FooterSeparator />
             <FooterBottom>
-            © Copyright 2018 – 2020. All Rights Reserved. HX Entertainment Limited (C 77290) and Mediarex Enterprises Limited (C 73768).
+            © Copyright 2020 – 2022. All Rights Reserved.
             </FooterBottom>
         </FooterContainer>
     ) 
