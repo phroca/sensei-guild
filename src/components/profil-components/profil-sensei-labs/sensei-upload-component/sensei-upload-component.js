@@ -24,9 +24,15 @@ const UploadCard = styled.div`
     grid-template-rows: auto;
     justify-items: center;
     align-items: center;
-
+    @media (max-width: 640px) {
+        width: 80vw;
+    }
 `
 const FormUpload = styled.form`
+    @media (max-width: 640px) {
+        display: grid;
+        justify-items: end;
+    }
 `
 
 const UploadSelect = styled.select`
@@ -36,6 +42,11 @@ const UploadSelect = styled.select`
     font-size: 50px;
     outline: none;
     border: none;
+    @media (max-width: 640px) {
+        text-align: center;
+        width: 80vw;
+        font-size: 25px;
+    }
 `
 
 const UploadOption = styled.option`
@@ -70,7 +81,11 @@ const InputFile = styled.input`
         border-radius: 8px;
         text-transform: uppercase;
         cursor: pointer;
-        
+        @media (max-width: 640px) {
+            width: 200px;
+            height: 50px;
+            font-size: 14px;
+        }
     }
     &:disabled::-webkit-file-upload-button{
             background: linear-gradient(.25turn, #232526, #434343);
@@ -92,6 +107,12 @@ const FileName = styled.span`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 20px;
+    @media (max-width: 640px) {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 60vw;
+    }
 `
 
 const UploadActionsContainer = styled.div`
@@ -109,6 +130,12 @@ const UploadButtons = styled.div`
     justify-items: center;
     align-items: center;
     justify-content: center;
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 10px;
+        justify-items: start;
+    }
 `
 
 const ValidationButton = styled.button`

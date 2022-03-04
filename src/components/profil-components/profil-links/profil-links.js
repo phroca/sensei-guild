@@ -9,6 +9,10 @@ const ProfilLinksContainer = styled.div`
     justify-items: center;
     grid-gap: 50px;
     padding: 50px 0;
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
 `
 
 const ProfilLinks = () => {

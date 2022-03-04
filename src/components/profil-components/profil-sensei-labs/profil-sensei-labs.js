@@ -11,17 +11,25 @@ const SenseiLabsContainer = styled.div`
     align-content: center;
     grid-gap: 50px;
     height: 700px;
+    justify-content: center;
+    @media (max-width: 640px) {
+        padding: 50px;
+        grid-template-rows: repeat(2, auto);
+    }
 `
 const SenseiLabsTitle = styled.h1`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 50px;
     justify-self: start;
+    @media (max-width: 640px) {
+        font-size: 30px;
+        justify-self: center;
+    }
 `
 
 const SenseiLabsUploadContainer = styled.div`
     display: grid;
-    grid-template-rows: 70px auto;
     grid-gap: 50px;
     justify-items: center;
     align-content: center;
@@ -40,5 +48,5 @@ const ProfilSenseiLabs = () => {
     )
 }
 
-
+                                                                                                                                                                                                                                              
 export default ProfilSenseiLabs

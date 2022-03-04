@@ -5,7 +5,9 @@ import { useMoralis, useMoralisQuery } from "react-moralis"
 const ParticipationContainer = styled.div`
     background-color: black;
     padding: 150px 150px 100px;
-
+    @media (max-width: 640px) {
+        padding: 100px 50px 100px;
+    }
 `
 
 const ParticipationText = styled.h1`
@@ -13,6 +15,10 @@ const ParticipationText = styled.h1`
     color: white;
     font-size: 50px;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+        font-size: 24px;
+        text-align: center;
+    }
 `
 const ProfilParticipation = () => {
     const {isAuthenticated, user, setUserData} = useMoralis();

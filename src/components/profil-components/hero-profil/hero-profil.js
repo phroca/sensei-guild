@@ -19,19 +19,31 @@ const HeroProfilContainer = styled.div`
         justify-items: center;
         align-items: center;
         grid-gap: 50px;
-    `
+        @media (max-width: 640px) {
+            grid-template-rows: repeat(2, auto);
+        }
+`
+
 const HeroProfilInfos = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
     grid-gap: 150px;
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px auto;
+        grid-gap: 50px;
+    }
 `
 const HeroProfilPartLeft = styled.div`
     display: grid;
     grid-template-columns: 320px 500px;
     position: relative;
     align-items: center;
+    @media (max-width: 640px) {
+        grid-template-columns: 50px 200px;
+    }
 `
 const ProfilImage = styled.img`
     border-radius: 50%;
@@ -40,6 +52,10 @@ const ProfilImage = styled.img`
     &:hover{
         cursor: pointer;
     }
+    @media (max-width: 640px) {
+        width: 50px;
+        height: 50px;
+        }
 `
 const ProfilSocialLinks = styled.div`
     position: absolute;
@@ -54,23 +70,46 @@ const ProfilSocialLinks = styled.div`
     align-items: center;
     padding: 50px 100px;
     z-index: 0;
+    @media (max-width: 640px) {
+        width: 120px;
+        left: 30px;
+        padding: 15px 40px;
+        grid-gap: 10px;
+        border-radius: 40px;
+    }
+    
 `
 const SocialLink = styled.h2`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 24px;
+    @media (max-width: 640px) {
+        font-size: 12px;
+    }
 `
 const HeroProfilPartRight = styled.div`
     display: grid;
     grid-template-rows: 320px 70px 20px;
     justify-items: center;
     align-items: center;
+    @media (max-width: 640px) {
+        grid-template-rows: 100px 70px 20px;
+        img{
+            width: 80px;
+            height: 80px;
+        }
+        
+    }
+
 `
 const HeroProfilGuildName = styled.h2`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 30px;
     text-transform: uppercase;
+    @media (max-width: 640px) {
+            font-size: 14px;
+    }
 `
 
 const ProfilTelegramLink = styled.a`
@@ -86,6 +125,10 @@ const HeroProfilTotalRecompenseContainer = styled.div`
     justify-items: center;
     align-items: center;
     width: 100%;
+    @media (max-width: 640px) {
+        grid-template-rows: repeat(3, auto);
+        
+    }
 `
 
 const HeroProfilTotalRecompenseTitle = styled.h1`
@@ -93,6 +136,11 @@ const HeroProfilTotalRecompenseTitle = styled.h1`
     color: white;
     font-size: 50px;
     justify-self: start;
+    @media (max-width: 640px) {
+        font-size: 24px;
+        justify-self: center;
+        text-align: center;
+    }
 `
 const HeroProfilTotalRecompenseValue = styled.div`
     display: grid;
@@ -100,12 +148,23 @@ const HeroProfilTotalRecompenseValue = styled.div`
     justify-items: center;
     align-items: center;
     grid-gap: 50px;
+    @media (max-width: 640px) {
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+        img{
+            width: 50px;
+        }
+    }
 `
 
 const HeroProfilTotalRecompenseValueTitle = styled.h1`
     font-family: "AirbnbCerealBlack";
     color: white;
     font-size: 64px;
+    @media (max-width: 640px) {
+            font-size: 16px;
+            text-align: center;
+    }
 `
 const InputProfil = styled.input`
 display: none;`

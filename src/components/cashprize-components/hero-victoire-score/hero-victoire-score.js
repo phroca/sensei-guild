@@ -224,7 +224,7 @@ const ScoreSpan = styled.div`
     font-size: 30px;
     text-transform: uppercase;
     @media (max-width: 640px) {
-        font-size: 14px;
+        font-size: 12px;
     }
 `
 
