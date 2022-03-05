@@ -166,7 +166,7 @@ const SenseiUploadComponent = () => {
     useEffect(() => {
         if(data && data.length > 0){
             const userData =  data.filter(elt => {
-                const eltId = elt?.get("user").id;
+                const eltId = elt?.get("user")?.id;
                 return eltId === user?.id;
 
             });

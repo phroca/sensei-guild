@@ -32,7 +32,7 @@ const ProfilParticipation = () => {
             if(dataProofs && dataCashprize && dataRaid){
                 /*UNe ligne de preuve correspond à une raid*/
                 const numberProofsOfUser = dataProofs.filter(elt => {
-                    const eltId = elt?.get("user").id;
+                    const eltId = elt?.get("user")?.id;
                     const statusProofValidated = elt?.get("statusProof") === "validated";
                     return eltId === user.id && statusProofValidated;
                 });
