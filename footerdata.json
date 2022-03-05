@@ -14,87 +14,87 @@
         {
             "id": "fp-3",
             "label": "$SENSEI",
-            "link": "/",
+            "link": "https://senseiprotocol.com/tokenomics/",
             "isExternalLink": true
         },
         {
             "id": "fp-4",
             "label": "Team",
-            "link": "/",
+            "link": "https://senseiprotocol.com/#team",
             "isExternalLink": true
         },
         {
             "id": "fp-5",
             "label": "Contact",
-            "link": "/",
+            "link": "mailto:hello@senseiprotocol.org",
             "isExternalLink": true
         }
     ],
     "footerCommunity": [{
             "id": "fc-1",
             "label": "Telegram FR",
-            "link": "/",
+            "link": "https://t.me/senseiprotocol_channel_fr",
             "isExternalLink": true
         },
         {
             "id": "fc-2",
             "label": "Telegram EN",
-            "link": "/",
+            "link": "https://t.me/senseiprotocol_channel_en",
             "isExternalLink": true
         },
         {
             "id": "fc-3",
             "label": "Twitter",
-            "link": "/",
+            "link": "https://twitter.com/AnubisCeo",
             "isExternalLink": true
         },
         {
             "id": "fc-4",
             "label": "Reddit",
-            "link": "/",
+            "link": "https://www.reddit.com/r/SenseiCryptoCommunity/",
             "isExternalLink": true
         },
         {
             "id": "fc-5",
             "label": "Discord",
-            "link": "/",
+            "link": "https://discord.gg/xcFfrUCdyQ",
             "isExternalLink": true
         },
         {
             "id": "fc-6",
             "label": "Instagram",
-            "link": "/",
+            "link": "https://www.instagram.com/senseiprotocol/",
             "isExternalLink": true
         }
     ],
     "footerResource": [{
             "id": "fr-1",
             "label": "BlackPaper",
-            "link": "/",
+            "link": "https://senseiprotocol.com/storage/2022/01/FR-BLACK-PAPER-SENSEI.pdf",
             "isExternalLink": true
         },
         {
             "id": "fr-2",
             "label": "Contract Github",
-            "link": "/",
+            "link": "https://github.com/SenseiProtocol/SenseiToken/blob/master/Sensei.sol",
             "isExternalLink": true
         },
         {
             "id": "fr-3",
             "label": "BscScan",
-            "link": "/",
+            "link": "https://bscscan.com/token/0x495c3b71de97290361c6a7eabebd5c20cd60326c#balances",
             "isExternalLink": true
         },
         {
             "id": "fp-4",
             "label": "Burn",
-            "link": "/",
+            "link": "https://docs.google.com/spreadsheets/d/1cyfewtGgU4k_DMkJ2qMwzwzyhto_Kcmg-Q_aWS1u5E0/edit",
             "isExternalLink": true
         },
         {
             "id": "fp-5",
             "label": "Wallet Transparency",
-            "link": "/",
+            "link": "https://docs.google.com/spreadsheets/d/1DTG9j55D1lM-sRPMyRniYz6d1vGOounGCd0C-I9nkhQ/edit#gid=0",
             "isExternalLink": true
         }
     ]

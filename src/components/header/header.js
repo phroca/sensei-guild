@@ -38,7 +38,6 @@ const Header = () => {
             <div className="header-group">
               <Link to="/"><img src={logoSensei} alt="sensei-logo" /><span>SENSEI</span></Link>
               <div className="nav-group">
-                <Link to="/"><button className="sensei-btn">buy sensei</button></Link>
                 <Account />
                 {/* <button className="btn-lang">EN</button> */}
               </div>

@@ -124,7 +124,7 @@ const Footer = () => {
                     </FooterColumnTitle>
                     <FooterColumnListLinkPages>
                     {footerdata.footerPages.map(page=> (
-                        <a key={page.id} href={page.link}>{page.label}</a>
+                        <a key={page.id} href={page.link} target={page.isExternalLink ? "_blank" : "_self"}>{page.label}</a>
                     ))}
                     </FooterColumnListLinkPages>
                 </FooterColumn>
@@ -134,7 +134,7 @@ const Footer = () => {
                     </FooterColumnTitle>
                     <FooterColumnListLinkCommunity>
                     {footerdata.footerCommunity.map(com=> (
-                        <a key={com.id} href={com.link}>{com.label}</a>
+                        <a key={com.id} href={com.link} target={com.isExternalLink ? "_blank" : "_self"}>{com.label}</a>
                     ))}
                     </FooterColumnListLinkCommunity>
                 </FooterColumn>
@@ -144,7 +144,7 @@ const Footer = () => {
                     </FooterColumnTitle>
                     <FooterColumnListLinkResources>
                     {footerdata.footerResource.map(res=> (
-                        <a key={res.id} href={res.link}>{res.label}</a>
+                        <a key={res.id} href={res.link} target={res.isExternalLink ? "_blank" : "_self"}>{res.label}</a>
                     ))}
                     </FooterColumnListLinkResources>
                 </FooterColumn>
