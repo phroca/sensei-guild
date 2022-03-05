@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 
 import useInput from "../../../hooks/useInput"
 import { useState } from "react"
-import imgGaia from "../../../images/inscription-img/GAIA.png"
-import imgOrion from "../../../images/inscription-img/ORION.png"
-import imgPegasus from "../../../images/inscription-img/PEGASUS.png"
+import imgGaia from "../../../images/home-img/hero-img/GAIA.png"
+import imgOrion from "../../../images/home-img/hero-img/ORION.png"
+import imgPegasus from "../../../images/home-img/hero-img/PEGASUS.png"
 import { useMoralis, useMoralisQuery } from "react-moralis"
 import toast, { Toaster } from 'react-hot-toast';
 
