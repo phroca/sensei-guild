@@ -56,7 +56,7 @@ const HeroCashprize = () => {
     const [currentCashprizeBNB, setCurrentCashprizeBNB] = useState(0);
     useEffect(()=> {
         if(data !== null){
-            setCurrentCashprizeSensei(data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === "0x5cE794a65c0cC043064AC2f0176bF1f20A13B127".toLowerCase())[0]?.decimals));
+            setCurrentCashprizeSensei(data?.filter(data => data.token_address === process.env.GATSBY_MORALIS_BNB_ADDRESS.toLowerCase())[0]?.balance / (10 ** +data?.filter(data => data.token_address === process.env.GATSBY_MORALIS_BNB_ADDRESS.toLowerCase())[0]?.decimals));
         } else {
             fetchERC20Balances(options);
         }
