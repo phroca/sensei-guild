@@ -20,7 +20,7 @@ const ProfilLinks = () => {
 
     return (
         <ProfilLinksContainer>
-            <Link to="/recompenses"><button className="sensei-btn big-btn">CONDITION DE PARTICIPATION</button></Link>
+            <Link to="/recompenses"><button className="sensei-btn big-btn">CONDITIONS DE PARTICIPATION</button></Link>
             <Link to="/cashprize"><button className="sensei-btn big-btn">CASHPRIZE & SCORE</button></Link>
             <Link to="/raid"><button className="sensei-btn big-btn">RAID EN COURS</button></Link>
         </ProfilLinksContainer>

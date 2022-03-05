@@ -71,7 +71,7 @@ const SectionChoixGuilde = () => {
                     <div className="subtext">
                         En tant que divinité, Gaïa est, d'une certaine manière, 
                         la gardienne du pouvoir divin : 
-                        c'est elle qui provoque la rébellion
+                        c'est elle qui provoque la rébellion.
                         Elle est aussi la première divinité qui pouvait prédire l'avenir.
                     </div>
                     <SenseiLink to="/inscription" className="sensei-btn big-btn">GUILDE GAIA</SenseiLink>

@@ -83,7 +83,7 @@ const HeroGuilde = () => {
             <HeroGuildePartLeft>
                 <HeroTitle>
                     Inscrivez-vous pour<br />
-                    Jouez gratuitement,<br />
+                    jouer gratuitement,<br />
                     dès maintenant !
                 </HeroTitle>
                 <HeroSubtitle>
