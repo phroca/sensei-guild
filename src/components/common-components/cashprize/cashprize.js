@@ -30,7 +30,7 @@ const CashPrizeNumber = styled.h1`
 `
 
 const CashPrize = () => {
-    const options = { chain: '0x61', address: process.env.GATSBY_MORALIS_CASHPRIZE_ADDRESS};
+    const options = { chain: process.env.GATSBY_MORALIS_CASHPRIZE_NETWORK_CHAIN, address: process.env.GATSBY_MORALIS_CASHPRIZE_ADDRESS};
     const { data, fetchERC20Balances } = useERC20Balances(options); 
     const [cashprize, setCashprize] = useState(0);
 

@@ -49,7 +49,7 @@ const CashprizeInBNB = styled.div`
 `
 
 const HeroCashprize = () => {
-    const options = { chain: '0x61', address: process.env.GATSBY_MORALIS_CASHPRIZE_ADDRESS};
+    const options = { chain: process.env.GATSBY_MORALIS_CASHPRIZE_NETWORK_CHAIN, address: process.env.GATSBY_MORALIS_CASHPRIZE_ADDRESS};
     const { fetchERC20Balances, data } = useERC20Balances(options);
     const { getBalances, data: balance, nativeToken, error, isLoading } = useNativeBalance(options);
     const [currentCashprizeSensei, setCurrentCashprizeSensei] = useState(0);

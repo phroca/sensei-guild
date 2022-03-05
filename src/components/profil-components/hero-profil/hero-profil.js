@@ -170,7 +170,7 @@ const InputProfil = styled.input`
 display: none;`
 
 const HeroProfil = () => {
-    const options = { chain: '0x61', address: '0xbfe92F7AF15441eBB41aC49902Bf1C073EA05285'};
+    const options = { chain: process.env.GATSBY_MORALIS_CASHPRIZE_NETWORK_CHAIN, address: '0xbfe92F7AF15441eBB41aC49902Bf1C073EA05285'};
     const {isAuthenticated, user, Moralis} = useMoralis();
     const { fetchERC20Balances, data } = useERC20Balances(options);
     const { getBalances, data: balance, nativeToken, error, isLoading } = useNativeBalance(options);
