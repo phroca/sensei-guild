@@ -242,18 +242,6 @@ const SenseiUploadComponent = () => {
                     proofUpload?.save();
                     setUserDataProof(proofUpload);
                 }
-                /*for(let i = 0; i < 3; i++ ){
-                    const fileToSave = null;
-                    const currentFile = filesUpload[i];
-                    if(currentFile){
-                        fileToSave = new Moralis.File(currentFile.name, currentFile.file);
-                    }
-                    const suffixe = i === 0 ? "" : "" + (i + 1);
-                    proofUpload?.set("proofFile" + suffixe, fileToSave);
-                }
-                proofUpload?.set("proofType", typeUpload);
-                proofUpload?.set("statusProof", "pending");
-                proofUpload?.save();*/
             }
         }
     }
