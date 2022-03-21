@@ -56,6 +56,11 @@ const ChoixGuildeContainer = styled.div`
             }
         }
     `
+    const GuildeChoiceTitle = styled.h2`
+        font-family: "AirbnbCerealBlack";
+        color: white;
+        grid-gap: 50px;
+    `
 
 const SectionChoixGuilde = () => {
     return (
@@ -74,7 +79,7 @@ const SectionChoixGuilde = () => {
                         c'est elle qui provoque la rébellion.
                         Elle est aussi la première divinité qui pouvait prédire l'avenir.
                     </div>
-                    <SenseiLink to="/inscription" className="sensei-btn big-btn">GUILDE GAIA</SenseiLink>
+                    <GuildeChoiceTitle>GUILDE GAIA</GuildeChoiceTitle>
                 </GuildeSection>
                 <GuildeSection>
                 <img className="img-pegasus" src={imgPegasus} alt="pegasus" width="250"/>
@@ -84,7 +89,7 @@ const SectionChoixGuilde = () => {
                         relation avec l'énergie spirituelle qui permet d'accéder au 
                         domaine des dieux, le mont Olympe, lui est attachée.
                     </div>
-                    <SenseiLink to="/inscription" className="sensei-btn big-btn">GUILDE PEGASUS</SenseiLink>
+                    <GuildeChoiceTitle>GUILDE PEGASUS</GuildeChoiceTitle>
                 </GuildeSection>
                 <GuildeSection>
                     <img className="img-orion" src={imgOrion} alt="orion" width="250"/>
@@ -95,7 +100,7 @@ const SectionChoixGuilde = () => {
                         600 fois plus grosse que le Soleil et 
                         qui règne dans le ciel de l'univers. 
                     </div>
-                    <SenseiLink to="/inscription" className="sensei-btn big-btn">GUILDE ORION</SenseiLink>
+                    <GuildeChoiceTitle>GUILDE ORION</GuildeChoiceTitle>
                 </GuildeSection>
             </ChoixGuildeListe>
         </ChoixGuildeContainer>

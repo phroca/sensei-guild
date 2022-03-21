@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import { getEllipsisTxt } from "../../helpers/formatters";
 import { useMoralis } from "react-moralis";
 import Modal from 'react-modal';
@@ -21,6 +22,13 @@ const BtnToAuthenticate = styled.button`
         width: 120px;
         height: 40px;
         font-size: 10px;
+    }
+    .lien-profil{
+        font-size: 14px;
+        grid-template-columns: auto;
+        @media (max-width: 640px) {
+            font-size: 10px;
+        }
     }
 `
 
@@ -137,7 +145,7 @@ const Account = () => {
     return (
         <>
         <BtnToAuthenticate >
-            <p>{getEllipsisTxt(user?.get("accounts")[0], 6)}</p> 
+        <Link to="/profil" className="lien-profil">{getEllipsisTxt(user?.get("accounts")[0], 6)}</Link> 
         </BtnToAuthenticate>
         <BtnToAuthenticate onClick={ () => handleLogout()}>
             <p>se déconnecter</p> 
