@@ -121,19 +121,72 @@ const HeroInscriptionGuildeChoice = styled.div`
 
 const SectionChoix = styled.div`
     display: grid;
-    grid-template-columns: 110px 20px auto;
+    grid-template-columns: auto;
     justify-content: center;
     align-items: center;
     @media (max-width: 640px) {
         justify-content: start;
     }
-
+    input[type="radio"] {
+        display: none;
+        &:not(:disabled) ~ label {
+            cursor: pointer;
+        }
+        &:disabled ~ label {
+            color: hsla(150, 5%, 75%, 1);
+            border-color: hsla(150, 5%, 75%, 1);
+            box-shadow: none;
+            cursor: not-allowed;
+        }   
+    }
+    input[type="radio"]:checked + label[for="gaia"] > div{
+        background: #568dfb;
+        color: hsla(215, 0%, 100%, 1);
+        box-shadow: 0px 0px 20px hsla(216, 100%, 50%, 0.75);
+    }
+    input[type="radio"]:checked + label[for="orion"]  > div{
+        background: #ff3f38;
+        color: hsla(215, 0%, 100%, 1);
+        box-shadow: 0px 0px 20px hsla(0, 100%, 50%, 0.75);
+    }
+    input[type="radio"]:checked + label[for="pegasus"]  > div{
+        background: #ab46ff;
+        color: hsla(215, 0%, 100%, 1);
+        box-shadow: 0px 0px 20px hsla(277, 100%, 50%, 0.75);
+    }
 `
 
 const LabelInscription = styled.label`
-    color: white;
-    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    
+    img{
+        z-index: 2;
+    }
+    div{
+        z-index: 1;
+        color: white;
+        text-transform: uppercase;
+        border-right: 1px solid white;
+        border-top: 1px solid white;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom: 1px solid white;
+        height: 80px;
+        width: 150px;
+        margin-left: -35px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: auto;
+        justify-items: center;
+        align-items: center;
+        transition: all 300ms linear; 
+    }
 `
+    
+    
 const HeroInscription = () => {
     const {isAuthenticated, user, setUserData} = useMoralis();
     const { data, error, isLoading } = useMoralisQuery("Guild");
@@ -240,19 +293,34 @@ const HeroInscription = () => {
                 </HeroInscriptionPseudosSocial>
                 <HeroInscriptionGuildeChoice>
                 <SectionChoix>
-                    <img className="img-gaia" src={imgGaia} width="110" height="110" alt="gaia" />
+                    
                     <input type="radio" value="gaia" name="guild" id="gaia"  onChange={handleGaiaChange} />
-                    <LabelInscription htmlFor="gaia">Gaia</LabelInscription>
+                    <LabelInscription htmlFor="gaia">
+                        <img className="img-gaia" src={imgGaia} width="110" height="110" alt="gaia" />
+                        <div>
+                            Gaia
+                        </div>
+                    </LabelInscription>
                 </SectionChoix>
                 <SectionChoix>
-                    <img className="img-orion" src={imgOrion} width="110" height="110" alt="orion" />
+                    
                     <input type="radio" value="orion" name="guild" id="orion" onChange={handleOrionChange} />
-                    <LabelInscription htmlFor="orion">Orion</LabelInscription>
+                    <LabelInscription htmlFor="orion">
+                        <img className="img-orion" src={imgOrion} width="110" height="110" alt="orion" />
+                        <div>
+                            Orion
+                        </div>
+                    </LabelInscription>
                 </SectionChoix>
                 <SectionChoix>
-                    <img className="img-pegasus" src={imgPegasus} width="110" height="110" alt="pegasus" />
+                    
                     <input type="radio" value="pegasus" name="guild" id="pegasus" onChange={handlePegasusChange} />
-                    <LabelInscription htmlFor="pegasus">Pegasus</LabelInscription>
+                    <LabelInscription htmlFor="pegasus">
+                        <img className="img-pegasus" src={imgPegasus} width="110" height="110" alt="pegasus" />
+                        <div>
+                            Pegasus
+                        </div>
+                    </LabelInscription>
                 </SectionChoix>
                     
                     
