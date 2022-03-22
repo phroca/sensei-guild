@@ -1,0 +1,25 @@
+@keyframes animateSpaceship {
+    0% {
+        transform: translateY(0px) translateX(0px)
+    }
+    50% {
+        transform: translateY(100px) translateX(-100px)
+    }
+    100% {
+        transform: translateY(0px) translateX(0px)
+    }
+}
+
+@media (max-width: 640px) {
+    @keyframes animateSpaceship {
+        0% {
+            transform: translateY(-30px) translateX(30px)
+        }
+        50% {
+            transform: translateY(0px) translateX(0px)
+        }
+        100% {
+            transform: translateY(-30px) translateX(30px)
+        }
+    }
+}

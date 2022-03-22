@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import "./hero-raid.css"
 
 import imgRaid from "../../../images/raid-img/tothemooon.png"
 
@@ -47,6 +48,10 @@ const HeroRaidPartRight = styled.div`
     grid-template-columns: 1fr;
     img {
             height: 100%;
+            animation: animateSpaceship;
+            animation-timing-function: cubic-bezier(0.8, 0.5, 0.5, 0.8);
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
         }
     @media (max-width: 640px) {
         grid-row-start: 1;
