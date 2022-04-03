@@ -167,8 +167,7 @@ const SenseiUploadComponent = () => {
         if(data && data.length > 0){
             const userData =  data.filter(elt => {
                 const eltId = elt?.get("user")?.id;
-                return eltId === user?.id;
-
+                return eltId === user?.id && elt?.get("statusProof") !== "closed";
             });
             const conteneurFile = [];
             const proofUpload = userData[0];
