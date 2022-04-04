@@ -62,14 +62,14 @@ const SectionConseil = ({propRaid}) => {
                     <div dangerouslySetInnerHTML={{__html: item?.get("ruleParagraph")}}></div>
                     </Text>
                 ))}
-                {rules.map((item, index)=>(
+                {/* {rules.map((item, index)=>(
                     <Text key={index}>
                     MISSION DU JOUR : <br />
                     CIBLE : {item?.get("target")}🎯<br />
                     {item?.get("linkTarget")}<br />
                     <div dangerouslySetInnerHTML={{__html: item?.get("ruleParagraph")}}></div>
                     </Text>
-                ))}
+                ))} */}
             </SectionConseilContent>
         </SectionConseilContainer>
     ) 
